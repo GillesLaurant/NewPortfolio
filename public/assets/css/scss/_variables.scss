@@ -1,0 +1,23 @@
+$dark_back: #000;
+
+$light_back_home: linear-gradient(225deg, #0093e9 0%, #80d0c7 100%);
+
+$light_back_projects: linear-gradient(225deg, #12fff7 0%, #b3ffab 100%);
+
+$light_back_contact: linear-gradient(225deg, #f83600 0%, #f9d423 100%);
+
+$dark_font: #fff;
+
+$light_font: $dark_back;
+
+$light_back_inputs: linear-gradient(
+  45deg,
+  rgb(170, 253, 250),
+  rgb(105, 172, 180)
+);
+
+$dark_title_home: linear-gradient(
+  to right,
+  rgb(103, 17, 251),
+  rgb(251, 1, 210)
+);

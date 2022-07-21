@@ -4,54 +4,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="shortcut icon"
+      href="./favicon.ico"
+      type="image/x-icon"
+      title="My Portfolio"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>My Portfolio</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
+
+  <body id="app" class="darkMode">
     <div class="header">
       <div class="theme">
-        <input type="range" name="theme" id="" step="2" />
+        <button type="button" class="toggleTheme">
+          <img
+            src="./assets/images/buttons/sun.svg"
+            class="toggleTheme-icon"
+            alt="button theme"
+          />
+        </button>
       </div>
 
-      <nav>
-        <ul>
-          <li class="nav-items activeNav">Home</li>
-          <li class="nav-items">Projets</li>
-          <li class="nav-items">Contact</li>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li id="home" class="nav-items activeNav" name="home">Home</li>
+          <li id="projects" class="nav-items" name="projects">Projets</li>
+          <li id="contact" class="nav-items" name="contact">Contact</li>
         </ul>
       </nav>
 
       <div class="language">
-        <button type="button">
-          <img src="" alt="" />
+        <button type="button" class="toggleLang">
+          <img
+            src="./assets/images/buttons/united-kingdom-flag-round-icon-32.png"
+            class="toggleLang-flag"
+            alt=""
+          />
         </button>
       </div>
     </div>
 
-    <main>
-      <section class="home">
-        <h1 class="home-title">Développeur Web Javascript</h1>
-        <aside class="home-asides">
-          <img src="" alt="logo OpenClassRoom" />
-        </aside>
+    <main class="main"></main>
 
-        <article class="home-article">
-          J’ai toujours été passionné par le monde de la tech, naturellement
-          j’ai décidé d’orienté ma carrière en ce sens en opérant une
-          reconversion professionnelle. Je me suis alors formé au développement
-          web en autodidacte avec OpenClassRoom puis via O’CLOCK avec une
-          formation intensive avec spécialisation React.
-        </article>
-
-        <aside class="home-asides">
-          <img src="" alt="logo O'clock" />
-        </aside>
-
-        <p class="text-author">by Gilles Laurant</p>
-      </section>
-    </main>
-
-    <script src="./assets/js/index.js"></script>
+    <script defer type="module" src="./assets/js/index.js"></script>
   </body>
 </html>

@@ -1,0 +1,287 @@
+@import "./scss/variables";
+@import "./scss/mixins";
+/***** RESET *****/
+* {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  border: none;
+  font-family: "Nunito", sans-serif;
+}
+svg {
+  pointer-events: none;
+}
+
+/***** HEADER APP *****/
+.header {
+  @include flex(_, space-between);
+  width: 100%;
+  height: 7vh;
+}
+
+/***** NAV APP *****/
+.nav {
+  width: 60%;
+
+  &-list {
+    @include flex(_, space-around);
+  }
+}
+// item hidden
+.activeNav {
+  display: none;
+}
+// button theme
+.toggleTheme {
+  @include flex;
+  background-color: transparent;
+  padding: 1%;
+  border-radius: 50%;
+  // border: 1px solid red;
+
+  & img {
+    height: 2rem;
+  }
+}
+// button lang
+.toggleLang {
+  @include flex;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+
+  & img {
+    height: 2rem;
+  }
+}
+
+/***** APP *****/
+#app {
+  max-height: 100vh;
+  padding: 0% 2% 2%;
+  overflow: hidden;
+}
+.darkMode {
+  background-color: $dark_back;
+  color: $dark_font;
+}
+
+.lightMode_home {
+  background: $light_back_home;
+  // color: $light_font;
+}
+.lightMode_projects {
+  background: $light_back_projects;
+  color: $light_font;
+}
+.lightMode_contact {
+  background: $light_back_contact;
+  color: $light_font;
+}
+
+/***** MAIN *****/
+main {
+  @include flex;
+  // height: 100%;
+  flex-grow: 1;
+
+  & h1 {
+    text-align: center;
+    font-family: "Anton";
+    font-size: 2.5rem;
+
+    margin: 3% 0;
+  }
+}
+
+/***** HOME *****/
+.home {
+  @include flex(column, space-between);
+  height: 93vh;
+  position: relative;
+
+  &-title {
+    // background: linear-gradient(to right, rgb(103, 17, 251), rgb(251, 1, 210));
+    background: linear-gradient(225deg, #0093e9 0%, #80d0c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &-img {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    background-image: url("../images/GilouSmall.jpg");
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  &-article {
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 2% 5%;
+  }
+
+  &-asides {
+    @include flex(_, space-around);
+    width: 100%;
+    &-content {
+      & img {
+        height: 100px;
+      }
+    }
+  }
+
+  &-text-author {
+    font-size: 1.2rem;
+    margin-bottom: 2%;
+  }
+}
+
+/***** PROJECTS *****/
+.projects {
+  @include flex(column, space-between);
+  height: 92vh;
+  border: 1px solid red;
+
+  &-title {
+    // background: linear-gradient(to right, rgb(0, 10, 198), rgb(55, 191, 250));
+    background: linear-gradient(225deg, #12fff7 0%, #b3ffab 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  &-container {
+    width: 100%;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  &-item {
+    @include flex(column);
+    width: 100%;
+    border: 1px solid cyan;
+    &-mokup {
+      max-width: 60%;
+      margin-bottom: 2%;
+    }
+    &-title {
+      font-size: 1.3em;
+    }
+  }
+}
+
+/***** CONTACT *****/
+.contact {
+  @include flex(column, space-between);
+  width: 100%;
+  height: 92vh;
+  position: relative;
+
+  &-title {
+    background: linear-gradient(to right, rgb(93, 0, 0), rgb(217, 1, 87));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  &-author {
+    position: absolute;
+    top: 24%;
+    font-size: 2em;
+    font-weight: 200;
+  }
+}
+
+// container links
+.contact-links {
+  width: 80%;
+  height: 30%;
+  position: absolute;
+  top: 10vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &-link {
+    width: auto;
+    height: 8vh;
+    fill: currentColor;
+  }
+}
+// link phone
+.contact-links-link:nth-child(1) {
+  justify-self: flex-start;
+  align-self: flex-start;
+}
+// link linkedin
+.contact-links-link:nth-child(2) {
+  justify-self: flex-end;
+  align-self: flex-start;
+  transform: scale(1.5);
+}
+// link github
+.contact-links-link:nth-child(3) {
+  justify-self: flex-start;
+  align-self: flex-end;
+}
+// link CV
+.contact-links-link:nth-child(4) {
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+/***** CONTACT FORM *****/
+.contact-form {
+  @include flex(column, center);
+  width: 80%;
+  font-size: 1.5rem;
+  font-weight: 300;
+
+  & label {
+    align-self: flex-start;
+    margin-bottom: 3%;
+  }
+
+  & input {
+    width: 99%;
+    font-size: 1.5rem;
+    background: $light_back_inputs;
+    padding: 1%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+  }
+
+  &-infos {
+    @include flex(column);
+    width: 100%;
+  }
+
+  &-message {
+    @include flex(column);
+    width: 100%;
+
+    & textarea {
+      width: 100%;
+      font-size: 1.5rem;
+      background: $light_back_inputs;
+      border-radius: 5px;
+    }
+  }
+}
+
+.contact-container-info {
+  @include flex(column);
+  width: 100%;
+}
+
+.contact-button {
+  justify-self: center;
+  font-size: 1.5rem;
+  background-color: rgb(7, 200, 42);
+  padding: 1% 3%;
+  margin: 4% auto 2%;
+  border-radius: 5px;
+}
