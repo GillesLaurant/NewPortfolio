@@ -12,11 +12,25 @@ const titleHomeColored = "linear-gradient(225deg, #0093E9 0%, #80D0C7 100%)";
 
 // Component
 const home = (lang) => {
-  return `<section class="home"><h1 class="home-title">${
-    lang ? titleHomeFrench : titleHomeEnglish
-  }</h1><div class="home-img"></div><article class="home-article">${
-    lang ? textHomeFrench : textHomeEnglish
-  }</article><div class="home-asides"><aside class="home-asides-content"><img src="./assets/images/Logo_OpenClassrooms.png" alt="logo OpenClassRoom" /></aside><aside class="home-asides-content"><img src="./assets/images/logos/IconOclock.svg" alt="logo O\'clock" /></aside></div><p class="home-text-author">by Gilles Laurant</p></section>`;
+  return `
+  <section class="home">
+  <h1 class="home-title">
+  ${lang ? titleHomeFrench : titleHomeEnglish}
+  </h1>
+  <div class="home-img">
+  </div><article class="home-article">
+  ${lang ? textHomeFrench : textHomeEnglish}
+  </article>
+  <div class="home-asides">
+  <aside class="home-asides-content home-openCR">
+  <img src="./assets/images/Logo_OpenClassrooms.png" alt="logo OpenClassRoom" />
+  </aside>
+  <aside class="home-asides-content home-oclock">
+  <img src="./assets/images/logos/IconOclock.svg" alt="logo O\'clock" />
+  </aside>
+  </div>
+  <p class="home-text-author">by Gilles Laurant</p>
+  </section>`;
 };
 
 export {

@@ -12,12 +12,85 @@ const labelEmailEnglish = "Your mail";
 const labelMessageEnglish = "Your message";
 const buttonEnglish = "Submit";
 
+// Colors title contact
 const titleContactColored = "linear-gradient(255deg, #f83600 0%, #f9d423 100%)";
+
+// Animation text author
+const animText = (text, lang) => {
+  // Params typewriter
+  const typewriter = new Typewriter(text, {
+    loop: true,
+    delay: 55,
+    deleteSpeed: 30,
+  });
+  // French typrewriter
+  if (lang) {
+    typewriter
+      .pauseFor(2500)
+      .typeString("Gilles Laurant")
+      .pauseFor(1700)
+      .deleteAll()
+      .typeString("Développeur <span class='type-web'>Web</span>")
+      .pauseFor(300)
+      .typeString(" <span class='type-js'>Javascript</span>")
+      .pauseFor(2000)
+      .deleteChars(14)
+      .pauseFor(500)
+      .typeString("<span class='type-front'>Front end</span>")
+      .pauseFor(300)
+      .typeString(" <span class='type-js'> Javascript</span>")
+      .pauseFor(1000)
+      .deleteChars(10)
+      .pauseFor(400)
+      .typeString(" <span class='type-react'>React</span>")
+      .pauseFor(1000)
+      .deleteChars(17)
+      .typeString("<span class='type-full'>Fullstack</span>")
+      .pauseFor(500)
+      .typeString(" <span class='type-js'> JS</span>")
+      .pauseFor(1500)
+      .start();
+  } else {
+    // English typewriter
+    typewriter
+      .pauseFor(1500)
+      .typeString("Gilles Laurant")
+      .pauseFor(1700)
+      .deleteAll()
+      .typeString(
+        "<span class='type-js'>Javascript </span> <span class='type-web'>Web</span> Developer"
+      )
+      .pauseFor(2000)
+      .deleteChars(13)
+      .pauseFor(500)
+      .typeString(" <span class='type-front'>Front end</span> Developer")
+      .pauseFor(1000)
+      .deleteAll()
+      .pauseFor(200)
+      .typeString(
+        "<span class='type-react'>React </span> <span class='type-front'>Front end</span> Developer"
+      )
+      .pauseFor(1000)
+      .deleteAll()
+      .typeString(
+        "<span class='type-js'>JS</span> <span class='type-full'> Fullstack</span> Developer"
+      )
+      .pauseFor(1500)
+      .start();
+  }
+};
+
 // Component
 const contact = (lang) => {
-  return `<section class="contact"><h1 class="contact-title">${
-    lang ? titleContactFrench : titleContactEnglish
-  }</h1><p class="contact-author">Gilles Laurant</p><div class="contact-links">
+  return `
+  <section class="contact">
+    <h1 class="contact-title">
+    ${lang ? titleContactFrench : titleContactEnglish}
+    </h1>
+
+    <p class="contact-author">Gilles Laurant</p>
+
+    <div class="contact-links">
     <svg
       class="contact-links-link link-phone"
       enable-background="new 0 0 139 139"
@@ -32,6 +105,7 @@ const contact = (lang) => {
         d="M67.317,81.952c-9.284-7.634-15.483-17.054-18.742-22.414l-2.431-4.583c0.85-0.912,7.332-7.853,10.141-11.619  c3.53-4.729-1.588-9-1.588-9S40.296,19.933,37.014,17.076c-3.282-2.861-7.06-1.272-7.06-1.272  c-6.898,4.457-14.049,8.332-14.478,26.968C15.46,60.22,28.705,78.216,43.028,92.148c14.346,15.734,34.043,31.504,53.086,31.486  c18.634-0.425,22.508-7.575,26.965-14.473c0,0,1.59-3.775-1.268-7.06c-2.86-3.284-17.265-17.688-17.265-17.688  s-4.268-5.119-8.998-1.586c-3.525,2.635-9.855,8.496-11.38,9.917C84.171,92.749,73.582,87.104,67.317,81.952z"
       />
     </svg>
+
     <svg
       class="contact-links-link link-linkedin"
       version="1.1"
@@ -61,6 +135,7 @@ const contact = (lang) => {
         d="M512 0C229.25 0 0 229.25 0 512c0 226.25 146.688 418.125 350.156 485.812 25.594 4.688 34.938-11.125 34.938-24.625 0-12.188-0.469-52.562-0.719-95.312C242 908.812 211.906 817.5 211.906 817.5c-23.312-59.125-56.844-74.875-56.844-74.875-46.531-31.75 3.53-31.125 3.53-31.125 51.406 3.562 78.47 52.75 78.47 52.75 45.688 78.25 119.875 55.625 149 42.5 4.654-33 17.904-55.625 32.5-68.375C304.906 725.438 185.344 681.5 185.344 485.312c0-55.938 19.969-101.562 52.656-137.406-5.219-13-22.844-65.094 5.062-135.562 0 0 42.938-13.75 140.812 52.5 40.812-11.406 84.594-17.031 128.125-17.219 43.5 0.188 87.312 5.875 128.188 17.281 97.688-66.312 140.688-52.5 140.688-52.5 28 70.531 10.375 122.562 5.125 135.5 32.812 35.844 52.625 81.469 52.625 137.406 0 196.688-119.75 240-233.812 252.688 18.438 15.875 34.75 47 34.75 94.75 0 68.438-0.688 123.625-0.688 140.5 0 13.625 9.312 29.562 35.25 24.562C877.438 930 1024 738.125 1024 512 1024 229.25 794.75 0 512 0z"
       />
     </svg>
+    
     <svg
       class="contact-links-link link-cv"
       height="80.4666mm"
@@ -129,4 +204,5 @@ export {
   labelMessageEnglish,
   buttonEnglish,
   titleContactColored,
+  animText,
 };
