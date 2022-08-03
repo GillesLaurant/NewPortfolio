@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/GillesLaurant/NewPortfolio#readme",
   "dependencies": {
+    "@emailjs/browser": "^3.6.2",
     "sass": "^1.53.0"
   }
 }

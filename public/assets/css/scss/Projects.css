@@ -1,0 +1,891 @@
+/*****   BACKGROUNS COLORS   *****/
+/*****   FONTS   *****/
+/***** ANIMATIONS *****/
+/***** RESPONSIVE *****/
+/***** PROJECTS *****/
+.projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 91vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.projects-close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 3vh;
+  height: 3vh;
+  display: none;
+  color: currentColor;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  -webkit-animation: turnStart 0.8s ease-out;
+          animation: turnStart 0.8s ease-out;
+}
+
+.projects-close-svg {
+  height: 100%;
+}
+
+.projects-close:active {
+  -webkit-box-shadow: 0px 0px 10px 2px currentColor;
+          box-shadow: 0px 0px 10px 2px currentColor;
+}
+
+.projects-title {
+  background: linear-gradient(278.1deg, #60dd8e 8.7%, #28969a 88.1%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 1% 0;
+}
+
+.projects-container {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (350px)[auto-fill];
+      grid-template-columns: repeat(auto-fill, 350px);
+  row-gap: 2%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+}
+
+.projects-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 80%;
+  max-height: 300px;
+  cursor: pointer;
+  margin: 0 auto;
+  border-radius: 10px;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+  -webkit-animation: allProjects 0.8s ease;
+          animation: allProjects 0.8s ease;
+}
+
+.projects-item-mokup {
+  pointer-events: none;
+  max-width: 60%;
+  margin-bottom: 2%;
+  -webkit-animation: showProjects 0.5s ease-out;
+          animation: showProjects 0.5s ease-out;
+}
+
+.projects-item-title {
+  pointer-events: none;
+  font-size: 1.3em;
+  opacity: 0;
+  -webkit-animation: showProjects 0.3s ease-out forwards;
+          animation: showProjects 0.3s ease-out forwards;
+}
+
+.projects-item:nth-child(1) {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s;
+}
+
+.projects-item:nth-child(1) .projects-item-title {
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+.projects-item:nth-child(2) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+
+.projects-item:nth-child(2) .projects-item-title {
+  -webkit-animation-delay: 0.8s;
+          animation-delay: 0.8s;
+}
+
+.projects-item:nth-child(3) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.projects-item:nth-child(3) .projects-item-title {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.projects-item:nth-child(4) {
+  -webkit-animation-delay: 0.7s;
+          animation-delay: 0.7s;
+}
+
+.projects-item:nth-child(4) .projects-item-title {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+/***** PROJECT VIEW *****/
+.project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: none;
+}
+
+.project-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.project-link-mokupDesk {
+  height: 20vh;
+}
+
+.project-link-mokupMob {
+  height: 12vh;
+}
+
+.project-intro {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 70%;
+  height: auto;
+  font-size: 1.1em;
+  text-align: center;
+  margin: 3% auto;
+  opacity: 0;
+  z-index: 2;
+  -webkit-animation: showDesc 0.3s ease-out 0.5s forwards;
+          animation: showDesc 0.3s ease-out 0.5s forwards;
+}
+
+.link-desk {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
+  margin: 0 auto;
+  z-index: 5;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  -webkit-animation: deskUp 0.8s ease-out forwards;
+          animation: deskUp 0.8s ease-out forwards;
+}
+
+.link-mob {
+  position: absolute;
+  bottom: 21vh;
+  margin: 0 auto;
+  -webkit-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  z-index: 10;
+  -webkit-animation: mobDown 0.8s ease-out forwards, mobBig 0.8s ease-out 1.3s forwards;
+          animation: mobDown 0.8s ease-out forwards, mobBig 0.8s ease-out 1.3s forwards;
+}
+
+.link-mob.mokup_viewed {
+  -webkit-transform: scale(1) !important;
+          transform: scale(1) !important;
+}
+
+.technos-close {
+  width: 3vh;
+  height: 3vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: currentColor;
+  background-color: transparent;
+  padding: 4px;
+  opacity: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  -webkit-animation: showButton 0.3s ease-out 0.9s forwards, animButton 0.8s ease 2s;
+          animation: showButton 0.3s ease-out 0.9s forwards, animButton 0.8s ease 2s;
+}
+
+.technos-close-svg {
+  height: 100%;
+  -webkit-animation: turnTechnos 0.8s ease-out 1.3s forwards;
+          animation: turnTechnos 0.8s ease-out 1.3s forwards;
+}
+
+.technos-close.button_viewed {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.technos-close:active {
+  -webkit-box-shadow: 0px 0px 15px 2px currentColor;
+          box-shadow: 0px 0px 15px 2px currentColor;
+}
+
+.techs-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 38% 38%;
+      grid-template-columns: 38% 38%;
+  row-gap: 2%;
+  -webkit-column-gap: 10vw;
+          column-gap: 10vw;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.techno {
+  height: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.techno-logo {
+  width: 8vw;
+  max-width: 35px;
+  max-height: 35px;
+  position: relative;
+  -webkit-transform: translateX(120%) scale(1.5);
+          transform: translateX(120%) scale(1.5);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+  -webkit-animation: showLogos 0.8s ease-out 1.3s forwards;
+          animation: showLogos 0.8s ease-out 1.3s forwards;
+}
+
+.techno-desc {
+  max-width: 60%;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  text-align: jusity;
+  word-break: keep-all;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease-out 0.2s;
+  transition: opacity 0.3s ease-out 0.2s;
+}
+
+.techno-desc.technoDesc_viewed {
+  opacity: 1;
+}
+
+.techno:nth-child(2n) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  text-align: end;
+}
+
+.techno:nth-child(2n) .techno-logo {
+  -webkit-transform: translateX(-120%) scale(1.5);
+          transform: translateX(-120%) scale(1.5);
+}
+
+.techno:nth-child(2n) .techno-logo.technoLogo_viewed,
+.techno-logo.technoLogo_viewed {
+  -webkit-transform: translateX(0%) scale(1);
+          transform: translateX(0%) scale(1);
+}
+
+/***** RESPONSIVE  *****/
+@media (min-width: 750px) {
+  .projects {
+    width: 100%;
+  }
+  .projects-container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 0;
+  }
+  .projects-item {
+    height: 200px;
+    width: 100%;
+  }
+  .projects-item-mokup {
+    width: 100%;
+    margin-bottom: 1%;
+  }
+  .projects-item:nth-child(3) {
+    -webkit-animation-delay: 0.7s;
+            animation-delay: 0.7s;
+  }
+  .projects-item:nth-child(3) .projects-item-title {
+    -webkit-animation-delay: 1.2s;
+            animation-delay: 1.2s;
+  }
+  .projects-item:nth-child(4) {
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+  }
+  .projects-item:nth-child(4) .projects-item-title {
+    -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+  }
+}
+
+@media (min-width: 990px) {
+  .projects-close {
+    width: 4.5vh;
+    height: 4.5vh;
+    position: relative;
+    padding: 5px;
+    margin: 2% auto 0% 20%;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+  .projects-close-svg {
+    height: 80%;
+  }
+  .projects-close:hover {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    -webkit-box-shadow: 0px 0px 15px 2px currentColor;
+            box-shadow: 0px 0px 15px 2px currentColor;
+  }
+  .projects-container {
+    width: 70%;
+    -ms-grid-columns: (500px)[2];
+        grid-template-columns: repeat(2, 500px);
+    -webkit-column-gap: 5%;
+            column-gap: 5%;
+    row-gap: 2%;
+  }
+  .projects-item {
+    height: 350px;
+    width: 100%;
+    -webkit-transition: background-color 0.5s ease-out, -webkit-box-shadow 0.3s ease-out;
+    transition: background-color 0.5s ease-out, -webkit-box-shadow 0.3s ease-out;
+    transition: background-color 0.5s ease-out, box-shadow 0.3s ease-out;
+    transition: background-color 0.5s ease-out, box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;
+  }
+  .projects-item-mokup {
+    width: 90%;
+    margin-bottom: 5%;
+    -webkit-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  .projects-item:hover {
+    -webkit-box-shadow: 0px 0px 30px 1px currentColor;
+            box-shadow: 0px 0px 30px 1px currentColor;
+  }
+  .projects-item:active {
+    background-color: currentColor;
+  }
+  .project {
+    width: 70%;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 12;
+        grid-template-columns: 12;
+    -ms-grid-rows: 3;
+        grid-template-rows: 3;
+    pointer-events: none;
+    -webkit-animation: isAnimate 1s forwards;
+            animation: isAnimate 1s forwards;
+  }
+  .project-link {
+    margin-bottom: 2%;
+  }
+  .project-link-mokupDesk {
+    height: auto;
+    width: 35vw;
+  }
+  .project-link-mokupMob {
+    height: 12vw;
+  }
+  .project-intro {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 11;
+    grid-column: 1 / 12;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 1;
+    grid-row: 1 / 2;
+    font-size: 1.3em;
+    margin: 0 auto;
+  }
+  .project:hover .link-desk {
+    -webkit-transform: translateX(-60%) !important;
+            transform: translateX(-60%) !important;
+  }
+  .project:hover .link-mob {
+    -webkit-transform: translateX(350%) !important;
+            transform: translateX(350%) !important;
+  }
+  .project:hover .techno-logo {
+    -webkit-transform: translateY(0) !important;
+            transform: translateY(0) !important;
+  }
+  .project:hover .techno-desc {
+    opacity: 1;
+  }
+  .link-desk {
+    -ms-grid-column: 5;
+    -ms-grid-column-span: 3;
+    grid-column: 5 / 8;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    -webkit-animation: deskLeft 0.8s forwards;
+            animation: deskLeft 0.8s forwards;
+  }
+  .link-mob {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 11;
+    grid-column: 1 / 12;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    grid-row: 2 / 3;
+    position: relative;
+    bottom: -3vw;
+    -webkit-animation: mobRight 0.8s forwards;
+            animation: mobRight 0.8s forwards;
+  }
+  .technos-close {
+    display: none;
+  }
+  .techs-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: _;
+            flex-direction: _;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 9;
+    grid-column: 2 / 11;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    grid-row: 3 / 4;
+    -webkit-box-flex: initial;
+        -ms-flex-positive: initial;
+            flex-grow: initial;
+    -webkit-column-gap: unset;
+            column-gap: unset;
+    margin: 0 auto;
+  }
+  .techno {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 8vw;
+    padding: 0 1%;
+  }
+  .techno-logo {
+    width: auto;
+    height: 100%;
+    max-height: 60px;
+    max-width: 100px;
+    -webkit-transition: all 0.5s ease-out !important;
+    transition: all 0.5s ease-out !important;
+    -webkit-transform: translate(0%, 100%) scale(1.2);
+            transform: translate(0%, 100%) scale(1.2);
+    -webkit-animation: showLogosLarge 0.5s ease-out forwards;
+            animation: showLogosLarge 0.5s ease-out forwards;
+  }
+  .techno-desc {
+    max-width: 200px;
+    font-size: 1em;
+    font-weight: 200;
+    text-align: center;
+    -webkit-transition: opacity 0.5s ease-out 0.1s !important;
+    transition: opacity 0.5s ease-out 0.1s !important;
+  }
+  .techno:hover.techno-logo {
+    -webkit-transform: translateY(0) scale(1) !important;
+            transform: translateY(0) scale(1) !important;
+  }
+  .techno:hover.techno-desc {
+    opacity: 1 !important;
+  }
+  .techno:nth-child(2n) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .techno:nth-child(2n) .techno-logo {
+    width: auto;
+    height: 100%;
+    max-height: 60px;
+    max-width: 100px;
+    -webkit-transform: translate(0%, 100%) scale(1.2);
+            transform: translate(0%, 100%) scale(1.2);
+  }
+  .techno:nth-child(1) .techno-logo {
+    -webkit-animation-delay: 0;
+            animation-delay: 0;
+  }
+  .techno:nth-child(2) .techno-logo {
+    -webkit-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+  }
+  .techno:nth-child(3) .techno-logo {
+    -webkit-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+  }
+  .techno:nth-child(4) .techno-logo {
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+  }
+  .techno:nth-child(5) .techno-logo {
+    -webkit-animation-delay: 0.4s;
+            animation-delay: 0.4s;
+  }
+  .techno:nth-child(6) .techno-logo {
+    -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+  }
+  .techno:nth-child(7) .techno-logo {
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+  }
+  .techno:nth-child(8) .techno-logo {
+    -webkit-animation-delay: 0.7s;
+            animation-delay: 0.7s;
+  }
+}
+
+/***** ANIMATIONS  *****/
+@-webkit-keyframes showProjects {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes allProjects {
+  from {
+    background-color: transparent;
+  }
+  30% {
+    background-color: currentColor;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes allProjects {
+  from {
+    background-color: transparent;
+  }
+  30% {
+    background-color: currentColor;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@-webkit-keyframes turnStart {
+  from {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes deskUp {
+  from {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes mobDown {
+  from {
+    -webkit-transform: translateY(-200%);
+            transform: translateY(-200%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes showDesc {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes showButton {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes turnTechnos {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+}
+
+@-webkit-keyframes showLogos {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes mobBig {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@keyframes mobBig {
+  from {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  to {
+    -webkit-transform: scale(1.5);
+            transform: scale(1.5);
+  }
+}
+
+@-webkit-keyframes animButton {
+  from {
+    background-color: transparent;
+    color: currentColor;
+    -webkit-box-shadow: 0px 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px 0px transparent;
+  }
+  50% {
+    background-color: #fff;
+    color: #000;
+    -webkit-box-shadow: 0px 0px 0px 5px #fff;
+            box-shadow: 0px 0px 0px 5px #fff;
+  }
+  to {
+    background-color: transparent;
+    color: currentColor;
+    -webkit-box-shadow: 0px 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px 0px transparent;
+  }
+}
+
+@keyframes animButton {
+  from {
+    background-color: transparent;
+    color: currentColor;
+    -webkit-box-shadow: 0px 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px 0px transparent;
+  }
+  50% {
+    background-color: #fff;
+    color: #000;
+    -webkit-box-shadow: 0px 0px 0px 5px #fff;
+            box-shadow: 0px 0px 0px 5px #fff;
+  }
+  to {
+    background-color: transparent;
+    color: currentColor;
+    -webkit-box-shadow: 0px 0px 0px 0px transparent;
+            box-shadow: 0px 0px 0px 0px transparent;
+  }
+}
+
+/***** ANIMATIONS LARGE SCREEN  *****/
+@-webkit-keyframes deskLeft {
+  from {
+    -webkit-transform: translateX(-150%);
+            transform: translateX(-150%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes mobRight {
+  from {
+    -webkit-transform: translateX(350%);
+            transform: translateX(350%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes showLogosLarge {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes isAnimate {
+  from {
+    pointer-events: none;
+  }
+  to {
+    pointer-events: all;
+  }
+}
+
+@keyframes isAnimate {
+  from {
+    pointer-events: none;
+  }
+  to {
+    pointer-events: all;
+  }
+}
+/*# sourceMappingURL=Projects.css.map */

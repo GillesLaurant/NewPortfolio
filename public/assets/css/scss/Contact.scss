@@ -1,0 +1,322 @@
+@import "./variables";
+@import "./mixins";
+
+/***** CONTACT *****/
+.contact {
+  @include flex(column, space-between);
+  width: 100%;
+  height: 92vh;
+  position: relative;
+
+  &-title {
+    background: $light_back_contact;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  // Text author
+  &-author {
+    width: 60%;
+    position: absolute;
+    top: 22%;
+    font-size: 1.7em;
+    font-weight: 200;
+    text-align: center;
+    pointer-events: none;
+  }
+}
+
+// Text style typewriter
+.type {
+  &-web {
+    font-weight: 600;
+  }
+  &-js {
+    font-style: italic;
+    color: #d9ff00;
+  }
+  &-front {
+    font-weight: 600;
+    word-break: break-word;
+  }
+  &-react {
+    font-style: italic;
+    color: #12fff7;
+  }
+  &-full {
+    font-weight: 600;
+  }
+}
+
+// container links
+.contact-links {
+  width: 80%;
+  height: 30%;
+  position: absolute;
+  top: 10vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  &-link {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    animation: showLinks 0.8s ease-out forwards;
+
+    & svg {
+      fill: currentColor;
+      width: auto;
+      height: 8vh;
+    }
+  }
+}
+// link phone
+.link-phone {
+  justify-self: flex-start;
+  align-self: flex-start;
+  animation-delay: 0.1s;
+}
+// link linkedin
+.link-linkedin {
+  justify-self: flex-end;
+  align-self: flex-start;
+  // transform: scale(1.5);
+  animation-delay: 0.2s;
+}
+// link github
+.link-github {
+  justify-self: flex-start;
+  align-self: flex-end;
+  animation-delay: 0.4s;
+}
+// link CV
+.link-cv {
+  justify-self: flex-end;
+  align-self: flex-end;
+  animation-delay: 0.3s;
+}
+
+/***** CONTACT FORM *****/
+.contact-form {
+  @include flex(column, center);
+  width: 80%;
+  font-size: 1.5rem;
+  font-weight: 300;
+
+  // Error message
+  &-error {
+    display: none;
+    font-size: 1.3rem;
+    line-height: 1.4rem;
+    text-align: center;
+    color: red;
+  }
+
+  // All labels
+  & label {
+    align-self: flex-start;
+    margin-bottom: 3%;
+    opacity: 0;
+    z-index: 1;
+    animation: showLabels 1s ease-out 1.6s forwards;
+  }
+
+  // All inputs
+  & input {
+    width: 99%;
+    display: block;
+    font-size: 1.5rem;
+    background: $light_back_inputs;
+    padding: 1%;
+    margin-bottom: 1%;
+    border-radius: 5px;
+    z-index: 2;
+    transform: translateY(400%);
+    animation: showInputs 1s ease-out 0.8s forwards;
+
+    &::placeholder {
+      color: rgba(177, 29, 29, 0.697);
+    }
+  }
+
+  // Container inputs Name & Email
+  &-infos {
+    @include flex(column);
+    width: 99%;
+  }
+
+  // Container textarea
+  &-message {
+    @include flex(column);
+    width: 100%;
+
+    & textarea {
+      width: 100%;
+      font-size: 1.5rem;
+      background: $light_back_inputs;
+      border-radius: 5px;
+      z-index: 3;
+
+      &::placeholder {
+        color: rgba(177, 29, 29, 0.697);
+      }
+    }
+  }
+}
+
+// Container one input Name || Email
+.contact-container-info {
+  @include flex(column);
+  width: 100%;
+}
+
+// Button submit
+.contact-button {
+  position: relative;
+  justify-self: center;
+  font-size: 1.5rem;
+  background-color: rgb(7, 200, 42);
+  padding: 1% 3%;
+  margin: 4% auto 2%;
+  border-radius: 5px;
+  transform: translateY(-300%);
+  z-index: 1;
+  animation: showSubmit 1s ease-out 0.8s forwards;
+
+  &-error {
+    background-color: rgb(130, 55, 55);
+    color: red;
+    cursor: default;
+
+    &:active {
+      background-color: rgb(209, 2, 2);
+    }
+  }
+}
+
+.form-success {
+  min-height: 400px;
+  border-radius: 10px;
+  margin-bottom: 7%;
+}
+
+/***** RESPONSIVE  *****/
+
+@include media(990px) {
+  .contact {
+    &-links {
+      @include flex(_, space-around, center);
+      width: 50%;
+      height: auto;
+      position: relative;
+      margin-bottom: 2%;
+    }
+
+    &-form {
+      font-size: 1.1rem;
+
+      &-error {
+        margin: 2% 0;
+      }
+
+      &-infos {
+        @include flex(row, space-between);
+        width: 100%;
+        margin-bottom: 1%;
+      }
+
+      & label {
+        margin: 1% 0 1.5%;
+      }
+
+      & input {
+        width: 99%;
+        padding: 0.5%;
+      }
+
+      & textarea {
+        padding: 0.5%;
+      }
+    }
+
+    &-container-info {
+      width: 45%;
+    }
+  }
+
+  // All links
+  .link-phone,
+  .link-linkedin,
+  .link-github,
+  .link-cv {
+    transition: color 0.2s, transform 0.5s ease-out;
+    justify-self: center;
+    align-self: center;
+  }
+
+  // All links hover
+  .contact-links-link:hover {
+    position: relative;
+    transform: rotate(360deg);
+    fill: #000;
+  }
+  .link-github {
+    animation-delay: 0.3s;
+  }
+  .link-cv {
+    animation-delay: 0.4s;
+  }
+
+  // Input email
+  .contact-email {
+    justify-content: flex-end;
+  }
+
+  // Button submit
+  .contact-button {
+    font-size: 1.2em;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    margin: 2% auto;
+
+    &:hover {
+      box-shadow: inset 0px 0px 1px 1px rgb(7, 200, 42);
+      background-color: transparent;
+      color: #fff;
+    }
+
+    &:active {
+      background-color: rgb(7, 200, 42);
+    }
+
+    &-error {
+      &:hover {
+        box-shadow: inset 0px 0px 1px 1px rgb(209, 2, 2);
+        color: red;
+      }
+
+      &:active {
+        background-color: rgb(209, 2, 2);
+      }
+    }
+  }
+
+  // Gif
+  .form-success {
+    margin-bottom: 3%;
+  }
+}
+
+/***** ANIMATIONS  *****/
+@include show(showLinks);
+@include showY(showInputs, 400%);
+@include showY(showSubmit, -300%);
+@keyframes showLabels {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

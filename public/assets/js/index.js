@@ -5,17 +5,19 @@ import { handlerNav } from "./handles/handlerNav.js";
 import { home, titleHomeColored } from "./views/Home.js";
 import { projects, titleProjectsColored } from "./views/Projects.js";
 import { contact, titleContactColored } from "./views/Contact.js";
+import { checkForm } from "./handles/handleMail.js";
 
 // DOM
 const main = document.getElementsByClassName("main");
 const linksNav = document.getElementsByClassName("nav-items");
 const themeButton = document.querySelector(".toggleTheme");
 const langButton = document.querySelector(".toggleLang");
+const submitButton = document.getElementsByClassName("contact-button");
 
 // PARAMS
-let locat = "home";
-let themeDark = true;
-let langFrench = true;
+export let locat = "home";
+export let themeDark = true;
+export let langFrench = true;
 
 // Handle nav Home || Projects || Contact
 const handleNav = (ev) => {
@@ -36,6 +38,7 @@ const handleNav = (ev) => {
       case "projects":
         link.innerHTML = langFrench ? "Projets" : "Projects";
         break;
+
       default:
         break;
     }

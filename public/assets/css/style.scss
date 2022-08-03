@@ -1,5 +1,8 @@
 @import "./scss/variables";
 @import "./scss/mixins";
+@import "./scss/Home.scss";
+@import "./scss/Projects.scss";
+@import "./scss/Contact.scss";
 /***** RESET *****/
 * {
   text-decoration: none;
@@ -12,76 +15,100 @@
 }
 svg {
   pointer-events: none;
+  fill: currentColor;
+}
+a:-webkit-any-link {
+  appearance: none;
+  text-decoration: none;
+  border: none;
+  color: inherit;
 }
 
 /***** HEADER APP *****/
 .header {
   @include flex(_, space-between);
   width: 100%;
-  height: 7vh;
-}
+  height: 6vh;
+  overflow: hidden;
 
-/***** NAV APP *****/
-.nav {
-  width: 60%;
+  // Nav
+  &-nav {
+    width: 60%;
 
-  &-list {
-    @include flex(_, space-around);
-  }
-
-  &-items {
-    // opacity: 0;
+    &-list {
+      @include flex(_, space-around);
+    }
   }
 }
 
-// item hidden
+.nav-items {
+  font-weight: 400;
+  cursor: pointer;
+}
+
+// Nav item hidden
 .activeNav {
   display: none;
 }
-// button theme
+
+// Button theme
 .toggleTheme {
   @include flex;
+  height: 5vh;
+  position: relative;
   background-color: transparent;
   padding: 1%;
+  cursor: pointer;
   border-radius: 50%;
   animation: showThemeButton 1s ease-out forwards;
 
   & img {
-    height: 2rem;
+    height: 3vh;
   }
 }
-// button lang
+
+// Button lang
 .toggleLang {
   @include flex;
-  width: 80%;
-  height: 80%;
+  height: 5vh;
+  position: relative;
+  background-color: transparent;
+  cursor: pointer;
   border-radius: 50%;
+  margin: 0 !important;
   animation: showLangButton 1s ease-out forwards;
 
   & img {
-    height: 2rem;
+    height: 3.5vh;
   }
 }
 
 /***** APP *****/
 #app {
   max-height: 100vh;
+  height: 100vh;
   padding: 0% 2% 2%;
   overflow: hidden;
 }
+
+// Colors dark mode
 .darkMode {
   background-color: $dark_back;
   color: $dark_font;
 }
 
+// Colors Home light mode
 .lightMode_home {
   background: $light_back_home;
-  // color: $light_font;
 }
+
+// Colors Projects light mode
 .lightMode_projects {
   background: $light_back_projects;
   color: $light_font;
 }
+
+// Colors contact light mode
 .lightMode_contact {
   background: $light_back_contact;
   color: $light_font;
@@ -90,407 +117,168 @@ svg {
 /***** MAIN *****/
 main {
   @include flex;
-  // height: 100%;
+  width: 100%;
   flex-grow: 1;
+  transition: all 0.5s;
 
+  // Title app
   & h1 {
     text-align: center;
     font-family: "Anton";
-    font-size: 2.5rem;
-    line-height: 2.6rem;
-    // -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left
-    //       bottom, from(transparent), color-stop(37%, transparent), to(rgba(250, 250, 250, 0.5)));
+    font-size: 2.5em;
     margin: 3% 0;
+    pointer-events: none;
+
+    &.projects-title.portfolio {
+      font-size: 2em;
+    }
   }
 }
 
-/***** HOME *****/
-.home {
-  @include flex(column, space-between);
-  height: 93vh;
-  position: relative;
-  overflow: hidden;
-
-  &-title {
-    background: linear-gradient(225deg, #0093e9 0%, #80d0c7 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+/***** RESPONSIVE  *****/
+@include media(750px) {
+  main h1 {
+    font-size: 3em;
+    margin: 1% auto;
+  }
+}
+@include media(990px) {
+  #app {
+    padding: 1% 2%;
+  }
+  .header {
+    height: 5vh;
   }
 
-  &-img {
-    width: 20vh;
-    height: 20vh;
-    border-radius: 50%;
-    background-image: url("../images/GilouSmall.jpg");
-    background-position: center;
-    background-size: cover;
-    // opacity: 0;
-    transition: opacity 0.5s;
-    overflow: hidden;
-    animation: show 1s ease forwards;
+  .toggleLang img,
+  .toggleTheme img {
+    transition: all 0.3s ease-out;
   }
 
-  &-article {
-    text-align: center;
-    font-size: 1.3rem;
-    padding: 2% 5%;
+  .toggleLang:hover img {
+    transform: scale(0.8);
+  }
+  .toggleTheme:hover img {
+    transform: scale(0.8);
   }
 
-  &-asides {
-    @include flex(_, space-around);
-    width: 100%;
-    position: relative;
+  .main {
+    flex-grow: 0;
 
-    &-content {
-      & img {
-        height: 100px;
+    & h1 {
+      font-size: 5em;
+      margin-top: 2%;
+
+      &.projects-title {
+        margin: 0;
+        &.portfolio {
+          font-size: 4em;
+        }
       }
     }
   }
 
-  &-openCR {
-    animation: showOPC 0.8s ease-out;
-  }
-  &-oclock {
-    animation: showOC 0.8s ease-out;
-  }
-
-  &-text-author {
-    font-size: 1.2rem;
-    margin-bottom: 2%;
-  }
-}
-
-/***** PROJECTS *****/
-.projects {
-  @include flex(column, space-between);
-  height: 92vh;
-
-  &-title {
-    // background: linear-gradient(to right, rgb(0, 10, 198), rgb(55, 191, 250));
-    background: linear-gradient(225deg, #12fff7 0%, #b3ffab 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  &-container {
-    width: 100%;
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: 1fr;
+  .nav-items-dark,
+  .nav-items-light {
+    font-size: 1.3em;
     position: relative;
   }
 
-  &-item {
-    @include flex(column);
+  // Animations nav links dark mode
+  .nav-items-dark::before {
+    content: "";
     width: 100%;
-    cursor: pointer;
-    // border: 1px solid cyan;
-
-    &-mokup {
-      pointer-events: none;
-      max-width: 60%;
-      margin-bottom: 2%;
-    }
-    &-title {
-      pointer-events: none;
-      font-size: 1.3em;
-    }
-  }
-}
-
-/***** PROJECT VIEW *****/
-.project {
-  &-mokupDesk {
-    height: 20vh;
-    margin: 0 auto;
-  }
-
-  &-intro {
-    width: 60%;
-    height: auto;
-    font-size: 1.1em;
-    text-align: center;
-    margin: 0 auto;
-  }
-}
-
-.techs-container {
-  width: 100%;
-  position: relative;
-  display: grid;
-  grid-template-columns: 40% 40%;
-  row-gap: 2%;
-  justify-content: space-between;
-  align-items: center;
-  // border: 1px solid red;
-}
-
-.techno {
-  // width: 40%;
-  display: flex;
-  align-items: center;
-  // border: 1px solid green;
-
-  &-logo {
-    // height: 5vh;
-    max-width: 10vw;
-  }
-  &-desc {
-    font-size: 0.9em;
-    line-height: 1em;
-    text-align: center;
-  }
-
-  &-mokup {
+    height: 1px;
     position: absolute;
-    height: 30%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: -3px;
+    transform-origin: 100% 0;
+    transform: scaleX(0);
+    transition: transform 0.4s;
+    background: #fff;
   }
-}
 
-.techno:nth-child(2n) {
-  flex-direction: row-reverse;
-  text-align: end;
-}
-.techno-desc:nth-child(1) {
-}
-p .techno-desc:nth-child(1) {
-  text-align: start;
-}
-/***** CONTACT *****/
-.contact {
-  @include flex(column, space-between);
-  width: 100%;
-  height: 92vh;
-  position: relative;
-
-  &-title {
-    background: linear-gradient(to right, rgb(93, 0, 0), rgb(217, 1, 87));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  &-author {
-    width: 60%;
+  // Animations nav links light mode
+  .nav-items-light::before {
+    content: "";
+    width: 100%;
+    height: 1px;
     position: absolute;
-    top: 22%;
-    font-size: 1.7em;
-    font-weight: 200;
-    text-align: center;
-    opacity: 0;
+    bottom: -3px;
+    transform-origin: 100% 0;
+    transform: scaleX(0);
+    transition: transform 0.4s;
+    background: #000;
+  }
+
+  .nav-items-dark:hover::before {
+    transform-origin: 0 0;
+    transform: scaleX(1);
+  }
+  .nav-items-light:hover::before {
+    transform-origin: 0 0;
+    transform: scaleX(1);
   }
 }
 
-.Typewriter__cursor {
-  animation: Typewriter__cursor 1s infinite 1s;
+.loader {
+  display: inline-block;
+  align-content: center;
+  position: relative;
+  width: 80px;
+  height: 15px;
 }
-
-.type {
-  &-web {
-    font-weight: 600;
-  }
-  &-js {
-    font-style: italic;
-    color: #d9ff00;
-  }
-  &-front {
-    font-weight: 600;
-    word-break: break-word;
-  }
-  &-react {
-    font-style: italic;
-    color: #12fff7;
-  }
-  &-full {
-    font-weight: 600;
-  }
-}
-
-// container links
-.contact-links {
-  width: 80%;
-  height: 30%;
+.loader-points {
   position: absolute;
-  top: 10vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
-  &-link {
-    width: auto;
-    height: 8vh;
-    fill: currentColor;
-    opacity: 0;
-    // transform: scale(0);
-    transition: opacity 0.8s ease-out;
-    animation: showLinks 0.8s ease-out forwards;
+  top: 0px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: currentColor;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.loader-points:nth-child(1) {
+  left: 8px;
+  animation: loading1 0.6s infinite;
+}
+.loader-points:nth-child(2) {
+  left: 8px;
+  animation: loading2 0.6s infinite;
+}
+.loader-points:nth-child(3) {
+  left: 32px;
+  animation: loading2 0.6s infinite;
+}
+.loader-points:nth-child(4) {
+  left: 56px;
+  animation: loading3 0.6s infinite;
+}
+@keyframes loading1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
-// link phone
-.contact-links-link:nth-child(1) {
-  justify-self: flex-start;
-  align-self: flex-start;
-  animation-delay: 0.1s;
-}
-// link linkedin
-.contact-links-link:nth-child(2) {
-  justify-self: flex-end;
-  align-self: flex-start;
-  transform: scale(1.5);
-  animation-delay: 0.2s;
-}
-// link github
-.contact-links-link:nth-child(3) {
-  justify-self: flex-start;
-  align-self: flex-end;
-  animation-delay: 0.4s;
-}
-// link CV
-.contact-links-link:nth-child(4) {
-  justify-self: flex-end;
-  align-self: flex-end;
-  animation-delay: 0.3s;
-}
-
-/***** CONTACT FORM *****/
-.contact-form {
-  @include flex(column, center);
-  width: 80%;
-  font-size: 1.5rem;
-  font-weight: 300;
-
-  & label {
-    align-self: flex-start;
-    margin-bottom: 3%;
-    opacity: 0;
-    z-index: 1;
-    animation: showLabels 1s forwards 1.6s;
+@keyframes loading2 {
+  0% {
+    transform: translate(0, 0);
   }
-
-  & input {
-    width: 99%;
-    display: block;
-    font-size: 1.5rem;
-    background: $light_back_inputs;
-    padding: 1%;
-    margin-bottom: 1%;
-    border-radius: 5px;
-    z-index: 2;
-    transform: translateY(400%);
-    animation: showInputs 1s ease-out 0.8s forwards;
+  100% {
+    transform: translate(24px, 0);
   }
-
-  &-infos {
-    @include flex(column);
-    width: 99%;
+}
+@keyframes loading3 {
+  0% {
+    transform: scale(1);
   }
-
-  &-message {
-    @include flex(column);
-    width: 100%;
-
-    & textarea {
-      width: 100%;
-      font-size: 1.5rem;
-      background: $light_back_inputs;
-      border-radius: 5px;
-      z-index: 3;
-    }
+  100% {
+    transform: scale(0);
   }
 }
 
-.contact-container-info {
-  @include flex(column);
-  width: 100%;
-}
-
-.contact-button {
-  justify-self: center;
-  font-size: 1.5rem;
-  background-color: rgb(7, 200, 42);
-  padding: 1% 3%;
-  margin: 4% auto 2%;
-  border-radius: 5px;
-  transform: translateY(-300%);
-  z-index: 1;
-  animation: showSubmit 1s ease-out 0.8s forwards;
-}
-
-/***** ANIMATIONS GENERALY  *****/
-@keyframes show {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes showNav {
-  from {
-    transform: translateY(-300%);
-    // opacity: 0;
-  }
-  to {
-    // opacity: 1;
-    transform: translateY(0%);
-  }
-}
-/***** ANIMATIONS HOME  *****/
-@keyframes showOPC {
-  from {
-    transform: translateX(-500%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-@keyframes showOC {
-  from {
-    transform: translateX(500%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-/***** ANIMATIONS CONTACT  *****/
-@keyframes showLinks {
-  from {
-    opacity: 0;
-    // transform: scale(0);
-  }
-  to {
-    opacity: 1;
-    // transform: scale(1);
-  }
-}
-
-@keyframes showLabels {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
-
-@keyframes showInputs {
-  from {
-    transform: translateY(400%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
-
-@keyframes showSubmit {
-  from {
-    transform: translateY(-300%);
-  }
-  to {
-    transform: translateY(0%);
-  }
-}
+/***** ANIMATIONS  *****/
+@include show(show);
+@include showY(showNav, -300%);
+@include showX(showThemeButton, -300%);
+@include showX(showLangButton, 300%);

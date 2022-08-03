@@ -1,0 +1,557 @@
+@import "./variables";
+@import "./mixins";
+
+/***** PROJECTS *****/
+.projects {
+  @include flex(column, space-between);
+  height: 91vh;
+  width: 100%;
+  overflow: hidden;
+
+  // Button close view project
+  &-close {
+    @include flex;
+    @include WegualH(3vh);
+    display: none;
+    color: currentColor;
+    background-color: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    animation: turnStart 0.8s ease-out;
+
+    &-svg {
+      height: 100%;
+    }
+
+    &:active {
+      box-shadow: 0px 0px 10px 2px currentColor;
+    }
+  }
+
+  // Title view all projects
+  &-title {
+    background: $light_back_projects;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 1% 0;
+  }
+
+  // Container all projects
+  &-container {
+    width: 100%;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 350px);
+    row-gap: 2%;
+    justify-content: space-around;
+    position: relative;
+  }
+
+  // One project item
+  &-item {
+    @include flex(column);
+    width: 80%;
+    max-height: 300px;
+    cursor: pointer;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+    animation: allProjects 0.8s ease;
+
+    // Mokup with desktop & mobile
+    &-mokup {
+      pointer-events: none;
+      max-width: 60%;
+      margin-bottom: 2%;
+      animation: showProjects 0.5s ease-out;
+    }
+
+    &-title {
+      pointer-events: none;
+      font-size: 1.3em;
+      opacity: 0;
+      animation: showProjects 0.3s ease-out forwards;
+    }
+  }
+}
+.projects-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.projects-item:nth-child(1) .projects-item-title {
+  animation-delay: 0.6s;
+}
+
+.projects-item:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.projects-item:nth-child(2) .projects-item-title {
+  animation-delay: 0.8s;
+}
+
+.projects-item:nth-child(3) {
+  animation-delay: 0.5s;
+}
+.projects-item:nth-child(3) .projects-item-title {
+  animation-delay: 1s;
+}
+.projects-item:nth-child(4) {
+  animation-delay: 0.7s;
+}
+.projects-item:nth-child(4) .projects-item-title {
+  animation-delay: 1.2s;
+}
+
+/***** PROJECT VIEW *****/
+.project {
+  @include flex(column, space-around);
+  flex-grow: 1;
+  display: none;
+
+  // Links with mokup
+  &-link {
+    @include flex;
+
+    // Mokup desktop
+    &-mokupDesk {
+      height: 20vh;
+    }
+
+    // Mokup mobile
+    &-mokupMob {
+      height: 12vh;
+    }
+  }
+
+  // Intro project
+  &-intro {
+    align-self: center;
+    width: 70%;
+    height: auto;
+    font-size: 1.1em;
+    text-align: center;
+    margin: 3% auto;
+    opacity: 0;
+    z-index: 2;
+    animation: showDesc 0.3s ease-out 0.5s forwards;
+  }
+}
+
+// Link desktop
+.link-desk {
+  align-self: center;
+  position: relative;
+  margin: 0 auto;
+  z-index: 5;
+  transition: all 1s ease-out;
+  animation: deskUp 0.8s ease-out forwards;
+}
+
+// Link mobile
+.link-mob {
+  position: absolute;
+  bottom: 21vh;
+  margin: 0 auto;
+  transition: all 1s ease-out;
+  z-index: 10;
+  animation: mobDown 0.8s ease-out forwards, mobBig 0.8s ease-out 1.3s forwards;
+
+  // Technos opened
+  &.mokup_viewed {
+    transform: scale(1) !important;
+  }
+}
+
+// Button close technos
+.technos-close {
+  @include WegualH(3vh);
+  @include flex;
+  color: currentColor;
+  background-color: transparent;
+  padding: 4px;
+  opacity: 0;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  transition: all 0.5s ease-out;
+  animation: showButton 0.3s ease-out 0.9s forwards, animButton 0.8s ease 2s;
+
+  &-svg {
+    height: 100%;
+    animation: turnTechnos 0.8s ease-out 1.3s forwards;
+  }
+
+  // Technos opened
+  &.button_viewed {
+    transform: rotate(-45deg);
+  }
+
+  &:active {
+    box-shadow: 0px 0px 15px 2px currentColor;
+  }
+}
+
+// Container with technos
+.techs-container {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 38% 38%;
+  row-gap: 2%;
+  column-gap: 10vw;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+
+// One dependencie to project
+.techno {
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  // Logo techno
+  &-logo {
+    width: 8vw;
+    max-width: 35px;
+    max-height: 35px;
+    position: relative;
+    transform: translateX(120%) scale(1.5);
+    opacity: 0;
+    transition: transform 0.5s ease-out;
+    animation: showLogos 0.8s ease-out 1.3s forwards;
+  }
+
+  // Description techno
+  &-desc {
+    max-width: 60%;
+    font-size: 0.9em;
+    line-height: 1.2em;
+    text-align: jusity;
+    word-break: keep-all;
+    opacity: 0;
+    transition: opacity 0.3s ease-out 0.2s;
+
+    // Techno opened
+    &.technoDesc_viewed {
+      opacity: 1;
+    }
+  }
+}
+
+.techno:nth-child(2n) {
+  flex-direction: row-reverse;
+  text-align: end;
+}
+.techno:nth-child(2n) .techno-logo {
+  transform: translateX(-120%) scale(1.5);
+}
+.techno:nth-child(2n) .techno-logo.technoLogo_viewed,
+.techno-logo.technoLogo_viewed {
+  transform: translateX(0%) scale(1);
+}
+
+/***** RESPONSIVE  *****/
+
+// Tabletts
+@include media(750px) {
+  // All projects view
+  .projects {
+    width: 100%;
+
+    &-container {
+      align-items: center;
+      gap: 0;
+    }
+
+    // Project items
+    &-item {
+      height: 200px;
+      width: 100%;
+
+      &-mokup {
+        width: 100%;
+        margin-bottom: 1%;
+      }
+    }
+  }
+  // Delays animations
+  .projects-item:nth-child(3) {
+    animation-delay: 0.7s;
+  }
+  .projects-item:nth-child(3) .projects-item-title {
+    animation-delay: 1.2s;
+  }
+  .projects-item:nth-child(4) {
+    animation-delay: 0.5s;
+  }
+  .projects-item:nth-child(4) .projects-item-title {
+    animation-delay: 1s;
+  }
+}
+
+// Laptops & large screens
+@include media(990px) {
+  // All projects view
+  .projects {
+    // Button close view one project
+    &-close {
+      @include WegualH(4.5vh);
+      position: relative;
+      padding: 5px;
+      margin: 2% auto 0% 20%;
+      transition: all 0.3s ease-out;
+
+      &-svg {
+        height: 80%;
+      }
+
+      &:hover {
+        transform: rotate(90deg);
+        box-shadow: 0px 0px 15px 2px currentColor;
+      }
+    }
+
+    &-container {
+      width: 70%;
+      grid-template-columns: repeat(2, 500px);
+      column-gap: 5%;
+      row-gap: 2%;
+    }
+
+    // Project items
+    &-item {
+      height: 350px;
+      width: 100%;
+      transition: background-color 0.5s ease-out, box-shadow 0.3s ease-out;
+
+      &-mokup {
+        width: 90%;
+        margin-bottom: 5%;
+        transition: all 0.5s ease-out;
+      }
+
+      &:hover {
+        box-shadow: 0px 0px 30px 1px currentColor;
+      }
+
+      &:active {
+        background-color: currentColor;
+      }
+    }
+  }
+
+  // One project view
+  .project {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 12;
+    grid-template-rows: 3;
+    pointer-events: none;
+    animation: isAnimate 1s forwards;
+
+    // Links with mokup
+    &-link {
+      margin-bottom: 2%;
+
+      &-mokupDesk {
+        height: auto;
+        width: 35vw;
+      }
+
+      &-mokupMob {
+        height: 12vw;
+      }
+    }
+
+    // Description project
+    &-intro {
+      grid-column: 1 / 12;
+      grid-row: 1 / 2;
+      font-size: 1.3em;
+      margin: 0 auto;
+    }
+
+    // Animations components on hover project
+    &:hover {
+      .link-desk {
+        transform: translateX(-60%) !important;
+      }
+      .link-mob {
+        transform: translateX(350%) !important;
+      }
+      .techno-logo {
+        transform: translateY(0) !important;
+      }
+      .techno-desc {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Link desktop
+  .link-desk {
+    grid-column: 5 / 8;
+    grid-row: 2 / 3;
+    animation: deskLeft 0.8s forwards;
+  }
+
+  // Link mobile
+  .link-mob {
+    grid-column: 1 / 12;
+    grid-row: 2 / 3;
+    position: relative;
+    bottom: -3vw;
+    animation: mobRight 0.8s forwards;
+  }
+
+  // Button close show technos
+  .technos-close {
+    display: none;
+  }
+
+  .techs-container {
+    @include flex(_, space-evenly);
+    grid-column: 2 / 11;
+    grid-row: 3 / 4;
+    flex-grow: initial;
+    column-gap: unset;
+    margin: 0 auto;
+  }
+
+  // One techno container
+  .techno {
+    @include flex(column, space-around);
+    max-width: 8vw;
+    padding: 0 1%;
+
+    // Logo techno
+    &-logo {
+      width: auto;
+      height: 100%;
+      max-height: 60px;
+      max-width: 100px;
+      transition: all 0.5s ease-out !important;
+      transform: translate(0%, 100%) scale(1.2);
+      animation: showLogosLarge 0.5s ease-out forwards;
+    }
+
+    // Description techno
+    &-desc {
+      max-width: 200px;
+      font-size: 1em;
+      font-weight: 200;
+      text-align: center;
+      transition: opacity 0.5s ease-out 0.1s !important;
+    }
+
+    &:hover.techno-logo {
+      transform: translateY(0) scale(1) !important;
+    }
+
+    &:hover.techno-desc {
+      opacity: 1 !important;
+    }
+  }
+
+  .techno:nth-child(2n) {
+    @include flex(column, space-around);
+  }
+
+  .techno:nth-child(2n) .techno-logo {
+    width: auto;
+    height: 100%;
+    max-height: 60px;
+    max-width: 100px;
+    transform: translate(0%, 100%) scale(1.2);
+  }
+
+  // Delays animations
+  .techno:nth-child(1) .techno-logo {
+    animation-delay: 0;
+  }
+  .techno:nth-child(2) .techno-logo {
+    animation-delay: 0.1s;
+  }
+  .techno:nth-child(3) .techno-logo {
+    animation-delay: 0.2s;
+  }
+  .techno:nth-child(4) .techno-logo {
+    animation-delay: 0.3s;
+  }
+  .techno:nth-child(5) .techno-logo {
+    animation-delay: 0.4s;
+  }
+  .techno:nth-child(6) .techno-logo {
+    animation-delay: 0.5s;
+  }
+  .techno:nth-child(7) .techno-logo {
+    animation-delay: 0.6s;
+  }
+  .techno:nth-child(8) .techno-logo {
+    animation-delay: 0.7s;
+  }
+}
+
+/***** ANIMATIONS  *****/
+@include show(showProjects);
+@keyframes allProjects {
+  from {
+    background-color: transparent;
+  }
+  30% {
+    background-color: currentColor;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@include rotate(turnStart);
+@include showY(deskUp, 100%);
+@include showY(mobDown, -200%);
+@include show(showDesc);
+@include show(showButton);
+@include rotate(turnTechnos, 0deg, 45deg);
+@include show(showLogos);
+@keyframes mobBig {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.5);
+  }
+}
+@keyframes animButton {
+  from {
+    background-color: transparent;
+    color: currentColor;
+    box-shadow: 0px 0px 0px 0px transparent;
+  }
+  50% {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0px 0px 0px 5px #fff;
+  }
+  to {
+    background-color: transparent;
+    color: currentColor;
+    box-shadow: 0px 0px 0px 0px transparent;
+  }
+}
+
+/***** ANIMATIONS LARGE SCREEN  *****/
+@include showX(deskLeft, -150%);
+@include showX(mobRight, 350%);
+@include show(showLogosLarge);
+@keyframes isAnimate {
+  from {
+    pointer-events: none;
+  }
+  to {
+    pointer-events: all;
+  }
+}

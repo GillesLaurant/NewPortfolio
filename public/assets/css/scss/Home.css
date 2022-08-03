@@ -1,0 +1,242 @@
+/*****   BACKGROUNS COLORS   *****/
+/*****   FONTS   *****/
+/***** ANIMATIONS *****/
+/***** RESPONSIVE *****/
+/***** HOME *****/
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 93vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-title {
+  background: linear-gradient(225deg, #0093e9 0%, #80d0c7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.home-img {
+  width: 20vh;
+  height: 20vh;
+  border-radius: 50%;
+  background-image: url("../images/Gilou_192x128.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  overflow: hidden;
+  -webkit-animation: show 1s ease forwards;
+          animation: show 1s ease forwards;
+}
+
+.home-article {
+  max-width: 500px;
+  text-align: justify;
+  word-break: break-all;
+  font-size: 1.3em;
+  font-weight: 300;
+  padding: 2% 5%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.home-asides {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: _;
+          flex-direction: _;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+
+.home-asides-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.home-asides-content-linkOPC {
+  background-image: url("../images/logos/OCR_64.svg");
+  background-color: red;
+  background-position: center;
+  background-size: 110%;
+  cursor: pointer;
+  height: 10vh;
+  width: 10vh;
+  border-radius: 10px;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.home-asides-content-linkOC {
+  background-image: url("../images/logos/Oclock_64.svg");
+  background-color: red;
+  background-position: center;
+  background-size: 110%;
+  cursor: pointer;
+  height: 10vh;
+  width: 10vh;
+  border-radius: 10px;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.home-openCR {
+  -webkit-animation: showOPC 0.8s ease-out;
+          animation: showOPC 0.8s ease-out;
+}
+
+.home-oclock {
+  -webkit-animation: showOC 0.8s ease-out;
+          animation: showOC 0.8s ease-out;
+}
+
+.home-text-author {
+  font-size: 1.2em;
+  font-weight: 200;
+  margin-bottom: 2%;
+  -webkit-animation: showAuthorHome 0.8s ease-out;
+          animation: showAuthorHome 0.8s ease-out;
+  pointer-events: none;
+}
+
+/***** RESPONSING  *****/
+@media (min-width: 750px) {
+  .home {
+    width: 100%;
+  }
+}
+
+@media (min-width: 990px) {
+  .home {
+    height: 90vh;
+    width: 80%;
+  }
+  .home-article {
+    z-index: 1;
+  }
+  .home-img {
+    background-image: url("../images/Gilou_454x303.jpg");
+    position: relative;
+    z-index: 5;
+    -webkit-animation: upSun 1s ease-out;
+            animation: upSun 1s ease-out;
+  }
+  .home-asides {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: _;
+            flex-direction: _;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    top: -23%;
+  }
+  .home-asides-content-linkOPC:hover {
+    background-blend-mode: exclusion;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+  .home-asides-content-linkOC:hover {
+    background-blend-mode: exclusion;
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+  }
+}
+
+/***** ANIMATIONS  *****/
+@-webkit-keyframes showAuthorHome {
+  from {
+    -webkit-transform: translateY(300%);
+            transform: translateY(300%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes showOPC {
+  from {
+    -webkit-transform: translateX(-500%);
+            transform: translateX(-500%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes showOC {
+  from {
+    -webkit-transform: translateX(500%);
+            transform: translateX(500%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes upSun {
+  from {
+    -webkit-transform: translateY(300%);
+            transform: translateY(300%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=Home.css.map */

@@ -1,6 +1,74 @@
+// Display flex
 @mixin flex($dir: row, $jus: center, $ali: center) {
   display: flex;
   flex-direction: $dir;
   justify-content: $jus;
   align-items: $ali;
+}
+
+// Width & Height
+@mixin WegualH($size) {
+  width: $size;
+  height: $size;
+}
+
+/***** ANIMATIONS *****/
+
+// show traslate Y
+@mixin showY($name, $Y, $opa: 1) {
+  @-webkit-keyframes #{$name} {
+    from {
+      transform: translateY($Y);
+      opacity: $opa;
+    }
+    to {
+      transform: translateY(0%);
+      opacity: 1;
+    }
+  }
+}
+
+// show translate X
+@mixin showX($name, $X, $opa: 1) {
+  @-webkit-keyframes #{$name} {
+    from {
+      transform: translateX($X);
+      opacity: $opa;
+    }
+    to {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  }
+}
+
+// show rotate
+@mixin rotate($name, $start: 45deg, $end: 0deg) {
+  @-webkit-keyframes #{$name} {
+    from {
+      transform: rotate($start);
+    }
+    to {
+      transform: rotate($end);
+    }
+  }
+}
+
+// show opacity
+@mixin show($name) {
+  @-webkit-keyframes #{$name} {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+/***** RESPONSIVE *****/
+@mixin media($min) {
+  @media (min-width: $min) {
+    @content;
+  }
 }

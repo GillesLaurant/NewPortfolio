@@ -1,15 +1,17 @@
+// Import Home
 import {
   titleHomeFrench,
   textHomeFrench,
   titleHomeEnglish,
   textHomeEnglish,
-  titleHomeColored,
 } from "../views/Home.js";
+// Import Projects
 import {
   titleProjectsFrench,
   titleProjectsEnglish,
-  titleProjectsColored,
 } from "../views/Projects.js";
+import { listProjects } from "../views/DetailsProject.js";
+// Import Contact
 import {
   titleContactFrench,
   titleContactEnglish,
@@ -21,26 +23,30 @@ import {
   labelEmailEnglish,
   labelMessageEnglish,
   buttonEnglish,
-  titleContactColored,
 } from "../views/Contact.js";
-// Button toggle lang
+
+// DOM
+// Header
 const buttonLang = document.getElementsByClassName("toggleLang-flag");
-// Nav DOM
 const nav = document.getElementsByTagName("li");
-// Home DOM
+// Home
 const titleHome = document.getElementsByClassName("home-title");
 const textHome = document.getElementsByClassName("home-article");
-// Contact DOM
+// Projects
+const titleProjects = document.getElementsByClassName("projects-title");
+const introProjects = document.getElementsByClassName("project-intro");
+const technoDescript = document.getElementsByClassName("techno-desc");
+// Contact
 const titleContact = document.getElementsByClassName("contact-title");
 const labels = document.getElementsByTagName("label");
 const buttonSubmit = document.getElementsByClassName("contact-button");
 
+// Toggle language
 const handlerLang = (lang, locat) => {
-  console.log(buttonSubmit);
   // Toggle button image
   buttonLang[0].src = lang
-    ? "./assets/images/buttons/united-kingdom-flag-round-icon-32.png"
-    : "./assets/images/buttons/flag_french.png";
+    ? "./assets/images/buttons/FlagUK_64.svg"
+    : "./assets/images/buttons/FlagFrenchButton_64.svg";
 
   // Toggle nav items
   for (const link of nav) {
@@ -58,6 +64,7 @@ const handlerLang = (lang, locat) => {
   }
   // Toggle text components
   switch (locat) {
+    /***** HOME  *****/
     case "home":
       // Title
       titleHome[0].innerHTML = lang ? titleHomeFrench : titleHomeEnglish;
@@ -65,8 +72,40 @@ const handlerLang = (lang, locat) => {
       textHome[0].innerHTML = lang ? textHomeFrench : textHomeEnglish;
       break;
 
+    /***** PROJECTS  *****/
+    case "projects":
+      console.dir(titleProjects[0]);
+      // If view all projects
+      if (
+        titleProjects[0].innerText === "My projects" ||
+        titleProjects[0].innerText === "Mes projets"
+      ) {
+        titleProjects[0].innerText = lang
+          ? titleProjectsFrench
+          : titleProjectsEnglish;
+        // If view one project
+      } else {
+        // Sort project
+        const projectViewed = listProjects.find(
+          (project) => project.title === titleProjects[0].innerText
+        );
+        // Toggle intro language
+        introProjects[0].innerText = lang
+          ? projectViewed.introFr
+          : projectViewed.introEn;
+
+        // Toggle language
+        for (const [key, techno] of Object.entries(technoDescript)) {
+          techno.innerText = lang
+            ? projectViewed.listTech[key].descFr
+            : projectViewed.listTech[key].descEn;
+        }
+      }
+
+      break;
+
+    /***** CONTACT  *****/
     case "contact":
-      console.log(titleContact);
       // Title
       titleContact[0].innerHTML = lang
         ? titleContactFrench

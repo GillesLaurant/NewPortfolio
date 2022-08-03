@@ -1,23 +1,19 @@
+/*****   BACKGROUNS COLORS   *****/
+// Dark backs
 $dark_back: #000;
-
+// Home back
 $light_back_home: linear-gradient(225deg, #0093e9 0%, #80d0c7 100%);
+// Projects back
+$light_back_projects: linear-gradient(
+  278.1deg,
+  rgba(96, 221, 142, 1) 8.7%,
+  rgb(40, 150, 154) 88.1%
+);
+// Contact back
+$light_back_contact: linear-gradient(90deg, #fee140 0%, #fa709a 100%);
+// Inputs
+$light_back_inputs: linear-gradient(to left, #ece9e6, #ffffff);
 
-$light_back_projects: linear-gradient(225deg, #12fff7 0%, #b3ffab 100%);
-
-$light_back_contact: linear-gradient(225deg, #f83600 0%, #f9d423 100%);
-
+/*****   FONTS   *****/
 $dark_font: #fff;
-
 $light_font: $dark_back;
-
-$light_back_inputs: linear-gradient(
-  45deg,
-  rgb(170, 253, 250),
-  rgb(105, 172, 180)
-);
-
-$dark_title_home: linear-gradient(
-  to right,
-  rgb(103, 17, 251),
-  rgb(251, 1, 210)
-);

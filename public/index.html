@@ -11,49 +11,74 @@
       title="My Portfolio"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-    <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>My Portfolio</title>
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Gilles Laurant</title>
   </head>
 
   <body id="app" class="darkMode">
-    <div class="header">
-      <div class="theme">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-theme">
+        <!-- THEME BUTTON -->
         <button type="button" class="toggleTheme">
           <img
-            src="./assets/images/buttons/sun.svg"
+            src="./assets/images/buttons/Sun_64.svg"
             class="toggleTheme-icon"
-            alt="button theme"
+            alt="Soleil"
           />
         </button>
       </div>
 
-      <nav class="nav">
-        <ul class="nav-list">
-          <li id="home" class="nav-items activeNav" name="home">Home</li>
-          <li id="projects" class="nav-items" name="projects">Projets</li>
-          <li id="contact" class="nav-items" name="contact">Contact</li>
+      <!-- NAVIGATION -->
+      <nav class="header-nav">
+        <ul class="header-nav-list">
+          <li id="home" class="nav-items nav-items-dark activeNav" name="home">
+            Home
+          </li>
+          <li id="projects" class="nav-items nav-items-dark" name="projects">
+            Projets
+          </li>
+          <li id="contact" class="nav-items nav-items-dark" name="contact">
+            Contact
+          </li>
         </ul>
       </nav>
 
-      <div class="language">
+      <!-- LANGUAGE BUTTON -->
+      <div class="header-language">
         <button type="button" class="toggleLang">
           <img
-            src="./assets/images/buttons/united-kingdom-flag-round-icon-32.png"
+            src="./assets/images/buttons/FlagUK_64.svg"
             class="toggleLang-flag"
-            alt=""
+            alt="United Kingdom"
           />
         </button>
       </div>
-    </div>
+    </header>
 
+    <!-- APP COMPONENTS -->
     <main class="main"></main>
+
+    <!-- EMAILJS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+    ></script>
+    <!-- PUBLIC KEY EMAILJS -->
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("BEz2-luYB_NB8h-CG");
+      })();
+    </script>
+
+    <!-- TYPEWRITER -->
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+
+    <!-- APP -->
     <script defer type="module" src="./assets/js/index.js"></script>
   </body>
 </html>

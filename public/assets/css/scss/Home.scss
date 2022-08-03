@@ -1,0 +1,142 @@
+@import "./variables";
+@import "./mixins";
+/***** HOME *****/
+.home {
+  @include flex(column, space-between);
+  height: 93vh;
+  position: relative;
+  overflow: hidden;
+
+  &-title {
+    background: $light_back_home;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  // Author image circle
+  &-img {
+    width: 20vh;
+    height: 20vh;
+    border-radius: 50%;
+    background-image: url("../images/Gilou_192x128.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: opacity 0.5s;
+    overflow: hidden;
+    animation: show 1s ease forwards;
+  }
+
+  // Text
+  &-article {
+    max-width: 500px;
+    text-align: justify;
+    word-break: break-all;
+    font-size: 1.3em;
+    font-weight: 300;
+    padding: 2% 5%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  // 2 links formations
+  &-asides {
+    @include flex(_, space-around);
+    width: 100%;
+    height: 100px;
+    position: relative;
+
+    &-content {
+      @include flex;
+
+      // Link OpenClassRoom
+      &-linkOPC {
+        background-image: url("../images/logos/OCR_64.svg");
+        background-color: rgb(255, 0, 0);
+        background-position: center;
+        background-size: 110%;
+        cursor: pointer;
+        height: 10vh;
+        width: 10vh;
+        border-radius: 10px;
+        transition: transform 0.3s ease-out;
+      }
+
+      // Link O'clock
+      &-linkOC {
+        background-image: url("../images/logos/Oclock_64.svg");
+        background-color: rgb(255, 0, 0);
+        background-position: center;
+        background-size: 110%;
+        cursor: pointer;
+        height: 10vh;
+        width: 10vh;
+        border-radius: 10px;
+        transition: transform 0.3s ease-out;
+      }
+    }
+  }
+
+  &-openCR {
+    animation: showOPC 0.8s ease-out;
+  }
+  &-oclock {
+    animation: showOC 0.8s ease-out;
+  }
+
+  // Name author
+  &-text-author {
+    font-size: 1.2em;
+    font-weight: 200;
+    margin-bottom: 2%;
+    animation: showAuthorHome 0.8s ease-out;
+    pointer-events: none;
+  }
+}
+
+/***** RESPONSING  *****/
+
+@include media(750px) {
+  .home {
+    width: 100%;
+  }
+}
+
+@include media(990px) {
+  .home {
+    height: 90vh;
+    width: 80%;
+
+    &-article {
+      z-index: 1;
+    }
+    &-img {
+      background-image: url("../images/Gilou_454x303.jpg");
+      position: relative;
+      z-index: 5;
+      animation: upSun 1s ease-out;
+    }
+  }
+
+  .home-asides {
+    @include flex(_, space-between);
+    top: -23%;
+    &-content {
+      &-linkOPC:hover {
+        background-blend-mode: exclusion;
+        transform: scale(0.9);
+      }
+      &-linkOC:hover {
+        background-blend-mode: exclusion;
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+/***** ANIMATIONS  *****/
+
+@include showY(showAuthorHome, 300%);
+@include showX(showOPC, -500%);
+@include showX(showOC, 500%);
+@include showY(upSun, 300%);
