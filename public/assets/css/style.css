@@ -1748,7 +1748,7 @@ a:-webkit-any-link {
 /***** APP *****/
 #app {
   max-height: 100vh;
-  height: 100vh;
+  height: 100%;
   padding: 0% 2% 2%;
   overflow: hidden;
 }

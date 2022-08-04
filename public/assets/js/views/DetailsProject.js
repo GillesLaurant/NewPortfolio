@@ -310,9 +310,11 @@ export const showProject = (refProject, lang, themeDark) => {
       .map(
         (techno) =>
           `<div id=${project.ref + "_" + techno.name} class="techno">
-            <img src=${techno.logo} alt=${techno.alt} class="techno-logo" />
-              <p class="techno-desc">${lang ? techno.descFr : techno.descEn}</p>
-        </div>`
+            <img src=${techno.logo} alt=${
+            techno.alt
+          } class="techno-logo" loading="eager" />
+            <p class="techno-desc">${lang ? techno.descFr : techno.descEn}</p>
+          </div>`
       )
       .join("")}
     
