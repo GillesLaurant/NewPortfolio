@@ -174,17 +174,17 @@ const contact = (lang) => {
       <textarea
         class="contact-message-input"
         name="contactMessage"
-        rows="5"
+        rows="3"
         required
-      ></textarea>
-    </div>
-
-    <!-- SUBMIT BUTTON -->
-    <button type="button" class="contact-button">
-      ${lang ? buttonFrench : buttonEnglish}
-    </button>
-  </form>
-</section>`;
+        ></textarea>
+        </div>
+        
+        <!-- SUBMIT BUTTON -->
+        <button type="button" class="contact-button">
+        ${lang ? buttonFrench : buttonEnglish}
+        </button>
+        </form>
+        </section>`;
 };
 
 export {

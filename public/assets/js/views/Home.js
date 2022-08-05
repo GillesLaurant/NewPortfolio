@@ -41,7 +41,25 @@ const home = (lang) => {
     </div>
 
     <!-- AUTHOR -->
-    <p class="home-text-author">by Gilles Laurant</p>
+    <div class="home-text-author">
+      <span class="home-text-author-letters">b</span>
+      <span class="home-text-author-letters">y</span>
+      <span class="home-text-author-letters-space">_</span>
+      <span class="home-text-author-letters">G</span>
+      <span class="home-text-author-letters">i</span>
+      <span class="home-text-author-letters">l</span>
+      <span class="home-text-author-letters">l</span>
+      <span class="home-text-author-letters">e</span>
+      <span class="home-text-author-letters">s</span>
+      <span class="home-text-author-letters-space">_</span>
+      <span class="home-text-author-letters">L</span>
+      <span class="home-text-author-letters">a</span>
+      <span class="home-text-author-letters">u</span>
+      <span class="home-text-author-letters">r</span>
+      <span class="home-text-author-letters">a</span>
+      <span class="home-text-author-letters">n</span>
+      <span class="home-text-author-letters">t</span>
+      </div>
   </section>`;
 };
 

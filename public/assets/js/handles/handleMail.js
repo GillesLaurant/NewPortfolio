@@ -59,9 +59,9 @@ export const handlerMail = (lang) => {
     for (const input of Object.values(inputs)) {
       input.value.length < 1 && (input.placeholder = lang ? "Vide" : "Empty");
     }
+
     textarea[0].value < 1 &&
       (textarea[0].placeholder = lang ? "Vide" : "Empty");
-    console.log(emptyFields);
     return;
   }
   // Remove error message
