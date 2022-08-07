@@ -3,11 +3,44 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"
+    />
     <meta name="apple-touch-fullscreen" content="yes" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="#000" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <title>Gilles Laurant</title>
+    <meta
+      name="description"
+      content="Portfolio de Gilles Laurant, développeur web fullstack Javascript avec une spécialisation React.js ."
+    />
+    <link rel="canonical" href="https://www.gilleslaurant.fr" />
+    <meta
+      name="keywords"
+      content="Developer, Developer Web, Developer Front-end, Developer Back-end, Developer Fullstack, Developer Javascript, Developer React.js, Developer Html, Developer Css, Developer Sass, Developer Redux, Developer Redux@toolkits, Developer Apple, Developer IOS, Developer Android, O'clock, OpenClassRoom, tech, Developer autodidacte, portfolio developer"
+    />
+    <meta name="robots" content="index,follow,max-image-preview:none" />
+    <meta name="copyright" content="© GILLESLAURANT.FR 2022" />
+    <meta name="publisher" content="Gilles Laurant" />
+    <meta name="googlebot" content="index,follow,max-image-preview:none" />
+    <meta name="google" content="notranslate,nositelinkssearchbox" />
+    <meta http-equiv="Cache-control" content="public" />
+    <meta property="og:title" content="Gilles Laurant développeur web" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.gilleslaurant.fr" />
+    <meta
+      property="og:image"
+      content="https://www.gilleslaurant.fr/favicon.ico"
+    />
+    <meta
+      property="og:description"
+      content="Portfolio de Gilles Laurant, développeur web fullstack Javascript avec une spécialisation React.js ."
+    />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:site_name" content="Gilles Laurant, développeur web" />
     <link
       rel="shortcut icon"
       href="./favicon.ico"
@@ -15,11 +48,10 @@
       title="My Portfolio"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Anton&family=Nunito:wght@200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
+      href="./assets/css/style.css"
+      media="screen and (min-width: 20px)"
     />
-    <link rel="stylesheet" href="./assets/css/style.css" />
-    <title>Gilles Laurant</title>
   </head>
 
   <body id="app" class="darkMode">
@@ -27,11 +59,17 @@
     <header class="header">
       <div class="header-theme">
         <!-- THEME BUTTON -->
-        <button type="button" class="toggleTheme">
+        <button
+          type="button"
+          class="toggleTheme"
+          aria-label="toggle theme light"
+        >
           <img
             src="./assets/images/buttons/Sun_64.svg"
             class="toggleTheme-icon"
             alt="Soleil"
+            height="64px"
+            width="64px"
           />
         </button>
       </div>
@@ -39,25 +77,21 @@
       <!-- NAVIGATION -->
       <nav class="header-nav">
         <ul class="header-nav-list">
-          <li id="home" class="nav-items nav-items-dark activeNav" name="home">
-            Home
-          </li>
-          <li id="projects" class="nav-items nav-items-dark" name="projects">
-            Projets
-          </li>
-          <li id="contact" class="nav-items nav-items-dark" name="contact">
-            Contact
-          </li>
+          <li id="home" class="nav-items nav-items-dark activeNav">Home</li>
+          <li id="projects" class="nav-items nav-items-dark">Projets</li>
+          <li id="contact" class="nav-items nav-items-dark">Contact</li>
         </ul>
       </nav>
 
       <!-- LANGUAGE BUTTON -->
       <div class="header-language">
-        <button type="button" class="toggleLang">
+        <button type="button" class="toggleLang" aria-label="choose language">
           <img
             src="./assets/images/buttons/FlagUK_64.svg"
             class="toggleLang-flag"
             alt="United Kingdom"
+            height="64px"
+            width="64px"
           />
         </button>
       </div>
@@ -67,12 +101,11 @@
     <main class="main"></main>
 
     <!-- EMAILJS -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
+    <!-- type="text/javascript" -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <!-- PUBLIC KEY EMAILJS -->
-    <script type="text/javascript">
+    <!-- type="text/javascript" -->
+    <script>
       (function () {
         emailjs.init("BEz2-luYB_NB8h-CG");
       })();
@@ -82,6 +115,6 @@
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 
     <!-- APP -->
-    <script type="module" src="./assets/js/index.js"></script>
+    <script defer type="module" src="./assets/js/index.js"></script>
   </body>
 </html>

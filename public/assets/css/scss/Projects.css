@@ -112,7 +112,7 @@
 
 .projects-item-mokup {
   pointer-events: none;
-  max-width: 60%;
+  width: 60%;
   -webkit-animation: showProjects 0.3s ease-out;
           animation: showProjects 0.3s ease-out;
 }
@@ -402,7 +402,7 @@
     width: 100%;
   }
   .projects-item-mokup {
-    width: 100%;
+    width: 80%;
     margin-bottom: 1%;
   }
   .projects-item:nth-child(3) {
@@ -446,11 +446,11 @@
             filter: invert(1);
   }
   .projects-container {
-    width: 70%;
-    -ms-grid-columns: (500px)[2];
-        grid-template-columns: repeat(2, 500px);
-    -webkit-column-gap: 5%;
-            column-gap: 5%;
+    width: 80%;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 10%;
+            column-gap: 10%;
   }
   .projects-item {
     -webkit-box-pack: space-evenly;
@@ -465,7 +465,7 @@
     transition: background-color 0.5s ease-out, box-shadow 0.8s ease-out, -webkit-box-shadow 0.8s ease-out;
   }
   .projects-item-mokup {
-    width: 90%;
+    width: 60%;
     margin-bottom: 2%;
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
@@ -696,7 +696,7 @@
     background-color: transparent;
   }
   30% {
-    background-color: currentColor;
+    background-color: #fff;
   }
   100% {
     background-color: transparent;
@@ -708,7 +708,7 @@
     background-color: transparent;
   }
   30% {
-    background-color: currentColor;
+    background-color: #fff;
   }
   100% {
     background-color: transparent;

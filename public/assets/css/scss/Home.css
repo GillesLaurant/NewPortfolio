@@ -17,6 +17,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  overflow: auto;
 }
 
 .home-title {
@@ -273,21 +275,22 @@
   .home {
     width: 80%;
   }
-  .home-article {
-    font-size: calc(0.8em + 1vmin);
-    max-width: 50%;
-    z-index: 1;
-  }
   .home-img {
     width: 17vh;
     height: 17vh;
     background-image: url("../images/Gilou_454x303.jpg");
     position: relative;
+    margin: 5% 0;
     z-index: 5;
   }
   .home-img:hover {
     -webkit-filter: hue-rotate(3.142rad);
             filter: hue-rotate(3.142rad);
+  }
+  .home-article {
+    font-size: calc(0.8em + 1vmin);
+    max-width: 50%;
+    z-index: 1;
   }
   .home-text-author {
     font-size: calc(0.8em + 1vmin);
@@ -348,19 +351,6 @@
   to {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes upSun {
-  from {
-    -webkit-transform: translateY(300%);
-            transform: translateY(300%);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
     opacity: 1;
   }
 }

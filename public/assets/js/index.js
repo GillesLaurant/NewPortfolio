@@ -2,17 +2,13 @@
 import { handlerTheme } from "./handles/handlerTheme.js";
 import { handlerLang } from "./handles/handlerLang.js";
 import { handlerNav } from "./handles/handlerNav.js";
-import { home, titleHomeColored } from "./views/Home.js";
-import { projects, titleProjectsColored } from "./views/Projects.js";
-import { contact, titleContactColored } from "./views/Contact.js";
-import { checkForm } from "./handles/handleMail.js";
+import { home } from "./views/Home.js";
 
 // DOM
 const main = document.getElementsByClassName("main");
 const linksNav = document.getElementsByClassName("nav-items");
 const themeButton = document.querySelector(".toggleTheme");
 const langButton = document.querySelector(".toggleLang");
-const submitButton = document.getElementsByClassName("contact-button");
 
 // PARAMS
 export let locat = "home";

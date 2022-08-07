@@ -48,9 +48,9 @@ export const listProjects = [
         logo: "./assets/images/logos/Hostinger_64.svg",
         alt: "Hostinger.fr",
         descFr:
-          "Hébergement sur serveur privé virtuel (VPS) sur Hostinger.fr sous CentOS.",
+          "Hébergement sur serveur privé virtuel sur Hostinger.fr sous CentOS.",
         descEn:
-          "Hosting on virtual private server (VPS) on Hostinger.fr under CentOS.",
+          "Hosting on virtual private server on Hostinger.fr under CentOS.",
       },
       {
         name: "GitHub",
@@ -65,7 +65,7 @@ export const listProjects = [
     /*****   ShapeArts.fr   *****/
     ref: "shapearts",
     title: "ShapeArts.fr",
-    link: "www.shapearts.fr",
+    link: "https://www.shapearts.fr",
     introFr:
       "Application multi-joueurs de dessin communautaire à base de formes prédéfinies.",
     introEn:
@@ -137,7 +137,7 @@ export const listProjects = [
     /*****   reactDevGillesLaurant.com   *****/
     ref: "portfolio",
     title: "reactDevGillesLaurant.com",
-    link: "www.reactdevgilleslaurant.com",
+    link: "https://www.reactdevgilleslaurant.com",
     introFr: "Mon premier site vitrine, proposant plusieurs designs.",
     introEn: "My first showcase site, offering several designs.",
     mokups: "./assets/images/mokups/myPortfolioDeskMob_192.svg",
@@ -279,20 +279,20 @@ export const showProject = (refProject, lang, themeDark) => {
   <!-- LINKS -->
   <a href=${
     project.link
-  } class="project-link link-desk" target="_blank" title=${
+  } class="project-link link-desk" target="_blank"  title=${
     project.title
-  } rel="noopener noreferrer">
-    <img src=${
-      project.mokupDesk
-    } class="project-link-mokupDesk" loading="eager" />
+  } rel="noreferrer">
+    <img src=${project.mokupDesk} class="project-link-mokupDesk" alt=${
+    project.link
+  } loading="eager" />
   </a>
 
   <a href=${project.link} class="project-link link-mob" target="_blank" title=${
     project.title
-  } rel="noopener noreferrer">
+  } rel="noreferrer">
     <img src=${project.mokupMob} alt=${
     project.title
-  } class="project-link-mokupMob" loading="eager" />
+  } class="project-link-mokupMob" alt=${project.link} loading="eager" />
   </a>
 
   <!-- INTRO -->

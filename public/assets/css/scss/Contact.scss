@@ -128,6 +128,7 @@
     width: 99%;
     display: block;
     position: relative;
+    font-family: "Nunito", sans-serif;
     font-size: calc(0.6em + 1.3vh);
     background: $light_back_inputs;
     padding: 1%;
@@ -155,6 +156,7 @@
 
     & textarea {
       width: 100%;
+      font-family: "Nunito", sans-serif;
       font-size: calc(0.6em + 1.3vh);
       background: $light_back_inputs;
       border-radius: 5px;
@@ -216,6 +218,11 @@
 }
 
 /***** RESPONSIVE  *****/
+@include media(750px) {
+  .contact-form label {
+    margin: 2% 0;
+  }
+}
 
 @include media(990px) {
   .contact {
@@ -231,14 +238,14 @@
     &-links {
       @include flex(_, space-around, center);
       top: 0;
-      width: 50%;
+      width: 60%;
       height: auto;
       position: relative;
     }
 
     &-form {
       flex-grow: 0;
-      font-size: 1.1rem;
+      font-size: calc(0.5em + 1.3vh);
 
       &-error {
         margin: 2% 0;
@@ -258,11 +265,13 @@
 
       & input {
         width: 99%;
-        padding: 0.5%;
+        font-size: calc(0.5em + 1.3vh);
+        padding: 1%;
       }
 
       & textarea {
-        padding: 0.5%;
+        font-size: calc(0.5em + 1.3vh);
+        padding: 1%;
       }
     }
 
@@ -306,7 +315,7 @@
 
   // Button submit
   .contact-button {
-    font-size: 1.2em;
+    font-size: calc(0.6em + 1.3vh);
     transition: all 0.3s ease-out;
     cursor: pointer;
     margin: 2% auto;
