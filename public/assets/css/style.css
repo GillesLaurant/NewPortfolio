@@ -2033,20 +2033,20 @@ html {
 
 @font-face {
   font-family: "Anton";
-  src: local("Anton"), local("Anton-Regular"), local("Anton Regular"), url("/public/assets/fonts/Anton-Regular.ttf") format("truetype");
+  src: local("Anton"), local("Anton-Regular"), local("Anton Regular"), url("../fonts/Anton-Regular.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Nunito";
-  src: local("Nunito"), local("Nunito-Regular"), local("Nunito Regular"), url("/public/assets/fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+  src: local("Nunito"), local("Nunito-Regular"), local("Nunito Regular"), url("../fonts/Nunito-VariableFont_wght.ttf") format("truetype");
   font-weight: 200 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Nunito";
-  src: url("/public/assets/fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
   font-weight: 200 600;
   font-style: italic;
   font-display: swap;
