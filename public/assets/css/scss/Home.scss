@@ -5,7 +5,6 @@
 .home {
   @include flex(column, space-between);
   width: 100%;
-  overflow: auto;
 
   &-title {
     background: $light_back_home;
@@ -41,7 +40,6 @@
     z-index: 1;
     pointer-events: none;
     animation: showArticle 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-    overflow: hidden;
   }
 
   // 2 links formations
