@@ -454,7 +454,7 @@
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     height: auto;
-    width: 100%;
+    width: 90%;
     padding-top: 4%;
     -webkit-transition: background-color 0.5s ease-out, -webkit-box-shadow 0.8s ease-out;
     transition: background-color 0.5s ease-out, -webkit-box-shadow 0.8s ease-out;

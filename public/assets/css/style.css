@@ -888,7 +888,7 @@
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
     height: auto;
-    width: 100%;
+    width: 90%;
     padding-top: 4%;
     -webkit-transition: background-color 0.5s ease-out, -webkit-box-shadow 0.8s ease-out;
     transition: background-color 0.5s ease-out, -webkit-box-shadow 0.8s ease-out;
@@ -1540,6 +1540,7 @@
   position: relative;
   font-family: "Nunito", sans-serif;
   font-size: calc(0.6em + 1.3vh);
+  color: #000;
   background: -webkit-gradient(linear, right top, left top, from(#ece9e6), to(#ffffff));
   background: linear-gradient(to left, #ece9e6, #ffffff);
   padding: 1%;
@@ -1607,6 +1608,7 @@
   width: 100%;
   font-family: "Nunito", sans-serif;
   font-size: calc(0.6em + 1.3vh);
+  color: #000;
   background: -webkit-gradient(linear, right top, left top, from(#ece9e6), to(#ffffff));
   background: linear-gradient(to left, #ece9e6, #ffffff);
   border-radius: 5px;
@@ -1833,7 +1835,7 @@
     -webkit-box-shadow: inset 0px 0px 1px 1px #07c82a;
             box-shadow: inset 0px 0px 1px 1px #07c82a;
     background-color: transparent;
-    color: #fff;
+    color: currentColor;
   }
   .contact-button:active {
     background-color: #07c82a;
@@ -2027,20 +2029,20 @@ html {
 
 @font-face {
   font-family: "Anton";
-  src: local("Anton"), local("Anton-Regular"), local("Anton Regular"), url("../fonts/Anton-Regular.ttf") format("truetype");
+  src: local("Anton"), local("Anton-Regular"), local("Anton Regular"), url("/public/assets/fonts/Anton-Regular.ttf") format("truetype");
   font-display: swap;
 }
 
 @font-face {
   font-family: "Nunito";
-  src: local("Nunito"), local("Nunito-Regular"), local("Nunito Regular"), url("../fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+  src: local("Nunito"), local("Nunito-Regular"), local("Nunito Regular"), url("/public/assets/fonts/Nunito-VariableFont_wght.ttf") format("truetype");
   font-weight: 200 600;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("/public/assets/fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
   font-weight: 200 600;
   font-style: italic;
   font-display: swap;
