@@ -180,6 +180,7 @@
   width: 99%;
   display: block;
   position: relative;
+  font-family: "Nunito", sans-serif;
   font-size: calc(0.6em + 1.3vh);
   background: -webkit-gradient(linear, right top, left top, from(#ece9e6), to(#ffffff));
   background: linear-gradient(to left, #ece9e6, #ffffff);
@@ -246,6 +247,7 @@
 
 .contact-form-message textarea {
   width: 100%;
+  font-family: "Nunito", sans-serif;
   font-size: calc(0.6em + 1.3vh);
   background: -webkit-gradient(linear, right top, left top, from(#ece9e6), to(#ffffff));
   background: linear-gradient(to left, #ece9e6, #ffffff);
@@ -334,6 +336,12 @@
 }
 
 /***** RESPONSIVE  *****/
+@media (min-width: 750px) {
+  .contact-form label {
+    margin: 2% 0;
+  }
+}
+
 @media (min-width: 990px) {
   .contact {
     -webkit-box-pack: justify;
@@ -360,7 +368,7 @@
         -ms-flex-align: center;
             align-items: center;
     top: 0;
-    width: 50%;
+    width: 60%;
     height: auto;
     position: relative;
   }
@@ -368,7 +376,7 @@
     -webkit-box-flex: 0;
         -ms-flex-positive: 0;
             flex-grow: 0;
-    font-size: 1.1rem;
+    font-size: calc(0.5em + 1.3vh);
   }
   .contact-form-error {
     margin: 2% 0;
@@ -400,10 +408,12 @@
   }
   .contact-form input {
     width: 99%;
-    padding: 0.5%;
+    font-size: calc(0.5em + 1.3vh);
+    padding: 1%;
   }
   .contact-form textarea {
-    padding: 0.5%;
+    font-size: calc(0.5em + 1.3vh);
+    padding: 1%;
   }
   .contact-container-info {
     width: 45%;
@@ -450,7 +460,7 @@
             animation: showEmailLarge 0.8s ease-out 0§s forwards;
   }
   .contact-button {
-    font-size: 1.2em;
+    font-size: calc(0.6em + 1.3vh);
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
     cursor: pointer;

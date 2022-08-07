@@ -22,6 +22,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 100%;
+  overflow: auto;
 }
 
 .home-title {
@@ -278,21 +280,22 @@
   .home {
     width: 80%;
   }
-  .home-article {
-    font-size: calc(0.8em + 1vmin);
-    max-width: 50%;
-    z-index: 1;
-  }
   .home-img {
     width: 17vh;
     height: 17vh;
     background-image: url("../images/Gilou_454x303.jpg");
     position: relative;
+    margin: 5% 0;
     z-index: 5;
   }
   .home-img:hover {
     -webkit-filter: hue-rotate(3.142rad);
             filter: hue-rotate(3.142rad);
+  }
+  .home-article {
+    font-size: calc(0.8em + 1vmin);
+    max-width: 50%;
+    z-index: 1;
   }
   .home-text-author {
     font-size: calc(0.8em + 1vmin);
@@ -353,19 +356,6 @@
   to {
     -webkit-transform: translateX(0%);
             transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes upSun {
-  from {
-    -webkit-transform: translateY(300%);
-            transform: translateY(300%);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
     opacity: 1;
   }
 }
@@ -558,7 +548,7 @@
 
 .projects-item-mokup {
   pointer-events: none;
-  max-width: 60%;
+  width: 60%;
   -webkit-animation: showProjects 0.3s ease-out;
           animation: showProjects 0.3s ease-out;
 }
@@ -848,7 +838,7 @@
     width: 100%;
   }
   .projects-item-mokup {
-    width: 100%;
+    width: 80%;
     margin-bottom: 1%;
   }
   .projects-item:nth-child(3) {
@@ -892,11 +882,11 @@
             filter: invert(1);
   }
   .projects-container {
-    width: 70%;
-    -ms-grid-columns: (500px)[2];
-        grid-template-columns: repeat(2, 500px);
-    -webkit-column-gap: 5%;
-            column-gap: 5%;
+    width: 80%;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -webkit-column-gap: 10%;
+            column-gap: 10%;
   }
   .projects-item {
     -webkit-box-pack: space-evenly;
@@ -911,7 +901,7 @@
     transition: background-color 0.5s ease-out, box-shadow 0.8s ease-out, -webkit-box-shadow 0.8s ease-out;
   }
   .projects-item-mokup {
-    width: 90%;
+    width: 60%;
     margin-bottom: 2%;
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
@@ -1142,7 +1132,7 @@
     background-color: transparent;
   }
   30% {
-    background-color: currentColor;
+    background-color: #fff;
   }
   100% {
     background-color: transparent;
@@ -1154,7 +1144,7 @@
     background-color: transparent;
   }
   30% {
-    background-color: currentColor;
+    background-color: #fff;
   }
   100% {
     background-color: transparent;
@@ -1555,6 +1545,7 @@
   width: 99%;
   display: block;
   position: relative;
+  font-family: "Nunito", sans-serif;
   font-size: calc(0.6em + 1.3vh);
   background: -webkit-gradient(linear, right top, left top, from(#ece9e6), to(#ffffff));
   background: linear-gradient(to left, #ece9e6, #ffffff);
@@ -1621,6 +1612,7 @@
 
 .contact-form-message textarea {
   width: 100%;
+  font-family: "Nunito", sans-serif;
   font-size: calc(0.6em + 1.3vh);
   background: -webkit-gradient(linear, right top, left top, from(#ece9e6), to(#ffffff));
   background: linear-gradient(to left, #ece9e6, #ffffff);
@@ -1709,6 +1701,12 @@
 }
 
 /***** RESPONSIVE  *****/
+@media (min-width: 750px) {
+  .contact-form label {
+    margin: 2% 0;
+  }
+}
+
 @media (min-width: 990px) {
   .contact {
     -webkit-box-pack: justify;
@@ -1735,7 +1733,7 @@
         -ms-flex-align: center;
             align-items: center;
     top: 0;
-    width: 50%;
+    width: 60%;
     height: auto;
     position: relative;
   }
@@ -1743,7 +1741,7 @@
     -webkit-box-flex: 0;
         -ms-flex-positive: 0;
             flex-grow: 0;
-    font-size: 1.1rem;
+    font-size: calc(0.5em + 1.3vh);
   }
   .contact-form-error {
     margin: 2% 0;
@@ -1775,10 +1773,12 @@
   }
   .contact-form input {
     width: 99%;
-    padding: 0.5%;
+    font-size: calc(0.5em + 1.3vh);
+    padding: 1%;
   }
   .contact-form textarea {
-    padding: 0.5%;
+    font-size: calc(0.5em + 1.3vh);
+    padding: 1%;
   }
   .contact-container-info {
     width: 45%;
@@ -1825,7 +1825,7 @@
             animation: showEmailLarge 0.8s ease-out 0§s forwards;
   }
   .contact-button {
-    font-size: 1.2em;
+    font-size: calc(0.6em + 1.3vh);
     -webkit-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
     cursor: pointer;
@@ -1999,7 +1999,6 @@
      -moz-appearance: none;
           appearance: none;
   border: none;
-  font-family: "Nunito", sans-serif;
 }
 
 *::-webkit-scrollbar {
@@ -2019,8 +2018,38 @@ a:-webkit-any-link {
   color: inherit;
 }
 
+a:visited {
+  color: currentColor;
+}
+
+a:link {
+  color: currentColor;
+}
+
 html {
+  height: -webkit-fill-available;
   background-color: #000;
+}
+
+@font-face {
+  font-family: "Anton";
+  src: local("Anton"), local("Anton-Regular"), local("Anton Regular"), url("/public/assets/fonts/Anton-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: local("Nunito"), local("Nunito-Regular"), local("Nunito Regular"), url("/public/assets/fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nunito";
+  src: url("/public/assets/fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 600;
+  font-style: italic;
+  font-display: swap;
 }
 
 /***** HEADER APP *****/
@@ -2144,6 +2173,7 @@ html {
   right: 0;
   bottom: 0;
   padding: 6vh 2% 2%;
+  font-family: "Nunito", sans-serif;
 }
 
 .darkMode {
@@ -2200,6 +2230,51 @@ main h1 {
 
 main h1.projects-title.portfolio {
   font-size: 2em;
+}
+
+/***** LOADER  *****/
+.loader {
+  display: inline-block;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  position: relative;
+  width: 80px;
+  height: 15px;
+}
+
+.loader-points {
+  position: absolute;
+  top: 0px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: currentColor;
+  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
+          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loader-points:nth-child(1) {
+  left: 8px;
+  -webkit-animation: loading1 0.6s infinite;
+          animation: loading1 0.6s infinite;
+}
+
+.loader-points:nth-child(2) {
+  left: 8px;
+  -webkit-animation: loading2 0.6s infinite;
+          animation: loading2 0.6s infinite;
+}
+
+.loader-points:nth-child(3) {
+  left: 32px;
+  -webkit-animation: loading2 0.6s infinite;
+          animation: loading2 0.6s infinite;
+}
+
+.loader-points:nth-child(4) {
+  left: 56px;
+  -webkit-animation: loading3 0.6s infinite;
+          animation: loading3 0.6s infinite;
 }
 
 /***** RESPONSIVE  *****/
@@ -2296,51 +2371,47 @@ main h1.projects-title.portfolio {
   }
 }
 
-/***** LOADER  *****/
-.loader {
-  display: inline-block;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  position: relative;
-  width: 80px;
-  height: 15px;
+/***** ANIMATIONS  *****/
+@-webkit-keyframes showNav {
+  from {
+    -webkit-transform: translateY(-300%);
+            transform: translateY(-300%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+    opacity: 1;
+  }
 }
 
-.loader-points {
-  position: absolute;
-  top: 0px;
-  width: 13px;
-  height: 13px;
-  border-radius: 50%;
-  background: currentColor;
-  -webkit-animation-timing-function: cubic-bezier(0, 1, 1, 0);
-          animation-timing-function: cubic-bezier(0, 1, 1, 0);
+@-webkit-keyframes showThemeButton {
+  from {
+    -webkit-transform: translateX(-300%);
+            transform: translateX(-300%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
 }
 
-.loader-points:nth-child(1) {
-  left: 8px;
-  -webkit-animation: loading1 0.6s infinite;
-          animation: loading1 0.6s infinite;
+@-webkit-keyframes showLangButton {
+  from {
+    -webkit-transform: translateX(300%);
+            transform: translateX(300%);
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    opacity: 1;
+  }
 }
 
-.loader-points:nth-child(2) {
-  left: 8px;
-  -webkit-animation: loading2 0.6s infinite;
-          animation: loading2 0.6s infinite;
-}
-
-.loader-points:nth-child(3) {
-  left: 32px;
-  -webkit-animation: loading2 0.6s infinite;
-          animation: loading2 0.6s infinite;
-}
-
-.loader-points:nth-child(4) {
-  left: 56px;
-  -webkit-animation: loading3 0.6s infinite;
-          animation: loading3 0.6s infinite;
-}
-
+/***** ANIMATIONS LOADER  *****/
 @-webkit-keyframes loading1 {
   0% {
     -webkit-transform: scale(0);
@@ -2351,7 +2422,6 @@ main h1.projects-title.portfolio {
             transform: scale(1);
   }
 }
-
 @keyframes loading1 {
   0% {
     -webkit-transform: scale(0);
@@ -2404,46 +2474,6 @@ main h1.projects-title.portfolio {
   100% {
     -webkit-transform: scale(0);
             transform: scale(0);
-  }
-}
-
-/***** ANIMATIONS  *****/
-@-webkit-keyframes showNav {
-  from {
-    -webkit-transform: translateY(-300%);
-            transform: translateY(-300%);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes showThemeButton {
-  from {
-    -webkit-transform: translateX(-300%);
-            transform: translateX(-300%);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes showLangButton {
-  from {
-    -webkit-transform: translateX(300%);
-            transform: translateX(300%);
-    opacity: 1;
-  }
-  to {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-    opacity: 1;
   }
 }
 /*# sourceMappingURL=style.css.map */

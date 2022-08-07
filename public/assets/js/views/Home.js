@@ -31,12 +31,12 @@ const home = (lang) => {
 
       <!-- OpenClassRoom -->
       <aside class="home-asides-content home-openCR">
-        <a href="https://openclassrooms.com/" class="home-asides-content-linkOPC" target="_blank" title="OpenClassRoom" rel="noopener noreferrer"></a>
+        <a href="https://openclassrooms.com/" class="home-asides-content-linkOPC" target="_blank" title="OpenClassRoom" rel="noreferrer"></a>
       </aside>
 
       <!-- O'clock -->
       <aside class="home-asides-content home-oclock">
-        <a href="https://oclock.io/" class="home-asides-content-linkOC" target="_blank" title="O'clock" rel="noopener noreferrer"></a>
+        <a href="https://oclock.io/" class="home-asides-content-linkOC" target="_blank" title="O'clock" rel="noreferrer"></a>
       </aside>
     </div>
 

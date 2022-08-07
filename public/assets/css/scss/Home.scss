@@ -1,8 +1,11 @@
 @import "./variables";
 @import "./mixins";
+
 /***** HOME *****/
 .home {
   @include flex(column, space-between);
+  width: 100%;
+  overflow: auto;
 
   &-title {
     background: $light_back_home;
@@ -90,6 +93,7 @@
     font-weight: 200;
     margin-bottom: 2%;
 
+    // One letter
     &-letters {
       display: inline-block;
       position: relative;
@@ -97,20 +101,25 @@
       transition: all 0.3s ease-out;
       animation: showAuthorHome 0.5s ease-out;
 
+      // One space
       &-space {
         opacity: 0;
       }
 
+      // animation hover
       &:hover {
         transform: scale(1.5);
       }
     }
 
+    // Hidden cursor
     &:hover {
       cursor: none;
     }
   }
 }
+
+// Author letters animations delay
 .home-text-author-letters:nth-child(1) {
   animation-delay: 1.1s;
 }
@@ -177,16 +186,12 @@
   .home {
     width: 80%;
 
-    &-article {
-      font-size: calc(0.8em + 1vmin);
-      max-width: 50%;
-      z-index: 1;
-    }
-
+    // Author image
     &-img {
       @include WegualH(17vh);
       background-image: url("../images/Gilou_454x303.jpg");
       position: relative;
+      margin: 5% 0;
       z-index: 5;
 
       &:hover {
@@ -194,11 +199,18 @@
       }
     }
 
+    &-article {
+      font-size: calc(0.8em + 1vmin);
+      max-width: 50%;
+      z-index: 1;
+    }
+
     &-text-author {
       font-size: calc(0.8em + 1vmin);
     }
   }
 
+  // Logos formation
   .home-asides {
     @include flex(_, space-between);
     top: -21%;
@@ -209,11 +221,13 @@
         @include WegualH(13vh);
       }
 
+      // Link OpenClassRoom
       &-linkOPC:hover {
         background-blend-mode: exclusion;
         transform: scale(0.9);
       }
 
+      // Link O'clock
       &-linkOC:hover {
         background-blend-mode: exclusion;
         transform: scale(0.9);
@@ -223,10 +237,11 @@
 }
 
 /***** ANIMATIONS  *****/
-
+// Left & right logos formations
 @include showX(showOPC, -500%);
 @include showX(showOC, 500%);
-@include showY(upSun, 300%);
+
+// Apparition article
 @keyframes showArticle {
   from {
     transform: scale(0);
@@ -235,6 +250,8 @@
     transform: scale(1);
   }
 }
+
+// Apparition author image
 @keyframes rotateAuthor {
   from {
     transform: rotateX(-90deg);
@@ -244,6 +261,7 @@
   }
 }
 
+// Scalling letters author name
 @keyframes showAuthorHome {
   from {
     transform: scale(1);
