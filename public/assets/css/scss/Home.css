@@ -18,7 +18,6 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  overflow: auto;
 }
 
 .home-title {
@@ -59,7 +58,6 @@
   pointer-events: none;
   -webkit-animation: showArticle 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
           animation: showArticle 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28);
-  overflow: hidden;
 }
 
 .home-asides {
