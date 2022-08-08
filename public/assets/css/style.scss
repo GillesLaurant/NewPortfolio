@@ -29,10 +29,10 @@ a {
     color: inherit;
   }
   &:visited {
-    color: currentColor;
+    color: currentColor !important;
   }
   &:link {
-    color: currentColor;
+    color: currentColor !important;
   }
 }
 html {

@@ -62,7 +62,7 @@
     animation: showLinks 0.8s ease-out forwards;
 
     & svg {
-      fill: currentColor;
+      fill: currentColor !important;
       width: auto;
       height: 7vh;
     }
@@ -128,7 +128,7 @@
     position: relative;
     font-family: "Nunito", sans-serif;
     font-size: calc(0.6em + 1.3vh);
-    color: #000;
+    color: #000 !important;
     background: $light_back_inputs;
     padding: 1%;
     margin-bottom: 1%;
@@ -157,7 +157,7 @@
       width: 100%;
       font-family: "Nunito", sans-serif;
       font-size: calc(0.6em + 1.3vh);
-      color: #000;
+      color: #000 !important;
       background: $light_back_inputs;
       border-radius: 5px;
       padding: 1%;
@@ -267,12 +267,12 @@
       & input {
         width: 99%;
         font-size: calc(0.5em + 1.3vh);
-        padding: 1%;
+        padding: 1.5%;
       }
 
       & textarea {
         font-size: calc(0.5em + 1.3vh);
-        padding: 1%;
+        padding: 1.5%;
       }
     }
 

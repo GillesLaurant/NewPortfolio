@@ -1454,7 +1454,7 @@
 }
 
 .contact-links-link svg {
-  fill: currentColor;
+  fill: currentColor !important;
   width: auto;
   height: 7vh;
 }
@@ -1540,7 +1540,7 @@
   position: relative;
   font-family: "Nunito", sans-serif;
   font-size: calc(0.6em + 1.3vh);
-  color: #000;
+  color: #000 !important;
   background: -webkit-gradient(linear, right top, left top, from(#ece9e6), to(#ffffff));
   background: linear-gradient(to left, #ece9e6, #ffffff);
   padding: 1%;
@@ -1608,7 +1608,7 @@
   width: 100%;
   font-family: "Nunito", sans-serif;
   font-size: calc(0.6em + 1.3vh);
-  color: #000;
+  color: #000 !important;
   background: -webkit-gradient(linear, right top, left top, from(#ece9e6), to(#ffffff));
   background: linear-gradient(to left, #ece9e6, #ffffff);
   border-radius: 5px;
@@ -2016,11 +2016,11 @@ a:-webkit-any-link {
 }
 
 a:visited {
-  color: currentColor;
+  color: currentColor !important;
 }
 
 a:link {
-  color: currentColor;
+  color: currentColor !important;
 }
 
 html {
