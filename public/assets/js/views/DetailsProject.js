@@ -67,9 +67,9 @@ export const listProjects = [
     title: "ShapeArts.fr",
     link: "https://www.shapearts.fr",
     introFr:
-      "Application multi-joueurs de dessin communautaire à base de formes prédéfinies.",
+      "Application multi-joueurs de dessin communautaire à base de formes prédéfinies. </br> <span class='project-intro-soon'>Bientôt terminé.</span>",
     introEn:
-      "Multi-player community drawing application based on predefined shapes.",
+      "Multi-player community drawing application based on predefined shapes. </br> <span class='project-intro-soon'>Soon to be finished.</span>",
     mokups: "./assets/images/mokups/shapeartsDeskMob_192.svg",
     mokupDesk: "./assets/images/mokups/shapeartsDesk_192.svg",
     mokupMob: "./assets/images/mokups/shapeartsMob_192.svg",

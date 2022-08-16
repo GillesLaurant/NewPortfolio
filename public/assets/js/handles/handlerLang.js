@@ -1,28 +1,28 @@
 // Import Home
 import {
-  titleHomeFrench,
+  textHomeEnglish,
   textHomeFrench,
   titleHomeEnglish,
-  textHomeEnglish,
+  titleHomeFrench,
 } from "../views/Home.js";
 // Import Projects
-import {
-  titleProjectsFrench,
-  titleProjectsEnglish,
-} from "../views/Projects.js";
 import { listProjects } from "../views/DetailsProject.js";
+import {
+  titleProjectsEnglish,
+  titleProjectsFrench,
+} from "../views/Projects.js";
 // Import Contact
 import {
-  titleContactFrench,
-  titleContactEnglish,
-  labelNameFrench,
-  labelEmailFrench,
-  labelMessageFrench,
-  buttonFrench,
-  labelNameEnglish,
-  labelEmailEnglish,
-  labelMessageEnglish,
   buttonEnglish,
+  buttonFrench,
+  labelEmailEnglish,
+  labelEmailFrench,
+  labelMessageEnglish,
+  labelMessageFrench,
+  labelNameEnglish,
+  labelNameFrench,
+  titleContactEnglish,
+  titleContactFrench,
 } from "../views/Contact.js";
 
 // DOM
@@ -80,7 +80,7 @@ const handlerLang = (lang, locat) => {
         titleProjects[0].innerText === "My projects" ||
         titleProjects[0].innerText === "Mes projets"
       ) {
-        titleProjects[0].innerText = lang
+        titleProjects[0].innerHTML = lang
           ? titleProjectsFrench
           : titleProjectsEnglish;
         // If view one project
@@ -90,7 +90,7 @@ const handlerLang = (lang, locat) => {
           (project) => project.title === titleProjects[0].innerText
         );
         // Toggle intro language
-        introProjects[0].innerText = lang
+        introProjects[0].innerHTML = lang
           ? projectViewed.introFr
           : projectViewed.introEn;
 
