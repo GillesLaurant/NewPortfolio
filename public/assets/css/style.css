@@ -655,6 +655,12 @@
           animation: showDesc 0.3s ease-out 0.5s forwards;
 }
 
+.project-intro-soon {
+  font-size: calc(0.5em + 1vmin);
+  -webkit-filter: contrast(30%);
+          filter: contrast(30%);
+}
+
 .link-desk {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -926,9 +932,11 @@
   .project-link-mokupDesk {
     height: auto;
     width: 35vw;
+    max-width: 500px;
   }
   .project-link-mokupMob {
     height: 12vw;
+    max-height: 200px;
   }
   .project-intro {
     -ms-grid-column: 1;
@@ -939,6 +947,9 @@
     grid-row: 1 / 2;
     font-size: 1.3em;
     margin: 0 auto;
+  }
+  .project-intro-soon {
+    font-size: 1.1rem;
   }
   .project:hover .link-desk {
     -webkit-transform: translateX(-60%);
@@ -977,7 +988,7 @@
     position: relative;
     -webkit-transform: scale(1) translateY(0%);
             transform: scale(1) translateY(0%);
-    top: 3vw;
+    top: 2vw;
     -webkit-transition: all 0.5s ease-out;
     transition: all 0.5s ease-out;
     -webkit-animation: mobRight 0.8s ease-out;
@@ -1770,11 +1781,11 @@
   .contact-form input {
     width: 99%;
     font-size: calc(0.5em + 1.3vh);
-    padding: 1%;
+    padding: 1.5%;
   }
   .contact-form textarea {
     font-size: calc(0.5em + 1.3vh);
-    padding: 1%;
+    padding: 1.5%;
   }
   .contact-container-info {
     width: 45%;
@@ -2227,7 +2238,7 @@ main h1 {
 }
 
 main h1.projects-title.portfolio {
-  font-size: 2em;
+  font-size: 1.8em;
 }
 
 /***** LOADER  *****/
@@ -2313,7 +2324,7 @@ main h1.projects-title.portfolio {
     margin: 0;
   }
   .main h1.projects-title.portfolio {
-    font-size: 4em;
+    font-size: 5em;
   }
   .nav-items-dark,
   .nav-items-light {

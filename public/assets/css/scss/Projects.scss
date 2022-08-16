@@ -144,6 +144,11 @@
     opacity: 0;
     z-index: 2;
     animation: showDesc 0.3s ease-out 0.5s forwards;
+
+    &-soon {
+      font-size: calc(0.5em + 1vmin);
+      filter: contrast(30%);
+    }
   }
 }
 
@@ -376,10 +381,12 @@
       &-mokupDesk {
         height: auto;
         width: 35vw;
+        max-width: 500px;
       }
 
       &-mokupMob {
         height: 12vw;
+        max-height: 200px;
       }
     }
 
@@ -389,6 +396,10 @@
       grid-row: 1 / 2;
       font-size: 1.3em;
       margin: 0 auto;
+
+      &-soon {
+        font-size: 1.1rem;
+      }
     }
 
     // Animations components on hover project
@@ -422,7 +433,7 @@
     grid-row: 2 / 3;
     position: relative;
     transform: scale(1) translateY(0%);
-    top: 3vw;
+    top: 2vw;
     transition: all 0.5s ease-out;
     animation: mobRight 0.8s ease-out;
   }
