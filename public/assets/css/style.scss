@@ -3,6 +3,7 @@
 @import "./scss/Home.scss";
 @import "./scss/Projects.scss";
 @import "./scss/Contact.scss";
+
 /***** RESET *****/
 * {
   text-decoration: none;
@@ -37,6 +38,7 @@ a {
 }
 html {
   background-color: #000;
+  min-height: -webkit-fill-available;
 }
 
 @font-face {
@@ -62,6 +64,7 @@ html {
   font-style: italic;
   font-display: swap;
 }
+
 /***** HEADER APP *****/
 .header {
   @include flex(_, space-between);
@@ -137,9 +140,10 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
+  height: 94vh;
+  min-height: -webkit-fill-available;
   padding: 6vh 2% 2%;
   font-family: "Nunito", sans-serif;
-  flex-grow: 1;
 }
 
 // Colors dark mode

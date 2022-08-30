@@ -49,7 +49,7 @@
 .home-article {
   max-width: 500px;
   text-align: justify;
-  word-break: break-all;
+  overflow-wrap: break-word;
   font-size: calc(0.5em + 1.5vmax);
   line-height: auto;
   font-weight: 300;
