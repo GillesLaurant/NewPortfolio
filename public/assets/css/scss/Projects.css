@@ -361,7 +361,7 @@
   font-size: 0.9em;
   line-height: 1.2em;
   text-align: jusity;
-  word-break: keep-all;
+  overflow-wrap: break-word;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease-out 0.2s;
   transition: opacity 0.3s ease-out 0.2s;

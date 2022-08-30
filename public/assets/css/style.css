@@ -54,7 +54,7 @@
 .home-article {
   max-width: 500px;
   text-align: justify;
-  word-break: break-all;
+  overflow-wrap: break-word;
   font-size: calc(0.5em + 1.5vmax);
   line-height: auto;
   font-weight: 300;
@@ -795,7 +795,7 @@
   font-size: 0.9em;
   line-height: 1.2em;
   text-align: jusity;
-  word-break: keep-all;
+  overflow-wrap: break-word;
   opacity: 0;
   -webkit-transition: opacity 0.3s ease-out 0.2s;
   transition: opacity 0.3s ease-out 0.2s;
@@ -1521,6 +1521,8 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
   width: 80%;
   position: relative;
   font-size: calc(0.5em + 1.3vh);
@@ -2036,6 +2038,7 @@ a:link {
 
 html {
   background-color: #000;
+  min-height: -webkit-fill-available;
 }
 
 @font-face {
@@ -2179,11 +2182,10 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
+  height: 94vh;
+  min-height: -webkit-fill-available;
   padding: 6vh 2% 2%;
   font-family: "Nunito", sans-serif;
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
 }
 
 .darkMode {

@@ -98,6 +98,7 @@
   @include flex(column, space-evenly);
   justify-self: flex-end;
   flex-grow: 1;
+  flex-shrink: 1;
   width: 80%;
   position: relative;
   font-size: calc(0.5em + 1.3vh);
