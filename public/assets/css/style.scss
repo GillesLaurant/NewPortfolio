@@ -37,6 +37,8 @@ a {
   }
 }
 html {
+  position: relative;
+  height: 100%;
   background-color: #000;
   min-height: -webkit-fill-available;
 }
@@ -73,7 +75,7 @@ html {
   left: 0;
   right: 0;
   width: auto;
-  height: 6%;
+  height: 6vh;
   padding: 0 3%;
   z-index: 100;
   overflow: hidden;
@@ -140,7 +142,10 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 94vh;
+  height: 100vh;
+  display: flex;
+  align-items: stretch;
+  flex-grow: 1;
   min-height: -webkit-fill-available;
   padding: 6vh 2% 2%;
   font-family: "Nunito", sans-serif;
@@ -173,9 +178,16 @@ html {
 /***** MAIN *****/
 main {
   @include flex(_, _, stretch);
-  position: relative;
-  height: 100%;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  height: 94%;
+  width: 100%;
+  max-height: 94vh;
+  margin: 6vh auto 0;
   transition: all 0.5s;
+  overflow: hidden;
 
   // Title app
   & h1 {
@@ -253,18 +265,14 @@ main {
     transform: scale(0.8);
   }
 
-  .main {
-    flex-grow: 0;
+  .main h1 {
+    font-size: 5em;
+    margin-top: 2%;
 
-    & h1 {
-      font-size: 5em;
-      margin-top: 2%;
-
-      &.projects-title {
-        margin: 0;
-        &.portfolio {
-          font-size: 5em;
-        }
+    &.projects-title {
+      margin: 0;
+      &.portfolio {
+        font-size: 5em;
       }
     }
   }

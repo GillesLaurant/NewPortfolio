@@ -271,14 +271,16 @@
 
 @media (min-width: 990px) {
   .home {
-    width: 80%;
+    width: 100%;
+    max-width: 1800px;
+    padding: 0 2%;
   }
   .home-img {
     width: 17vh;
     height: 17vh;
     background-image: url("../images/Gilou_454x303.jpg");
     position: relative;
-    margin: 5% 0;
+    margin: 4% 0;
     z-index: 5;
   }
   .home-img:hover {
@@ -287,7 +289,10 @@
   }
   .home-article {
     font-size: calc(0.8em + 1vmin);
-    max-width: 50%;
+    width: 60%;
+    max-width: 950px;
+    text-align: center;
+    padding: 0 3%;
     z-index: 1;
   }
   .home-text-author {

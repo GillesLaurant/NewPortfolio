@@ -276,14 +276,16 @@
 
 @media (min-width: 990px) {
   .home {
-    width: 80%;
+    width: 100%;
+    max-width: 1800px;
+    padding: 0 2%;
   }
   .home-img {
     width: 17vh;
     height: 17vh;
     background-image: url("../images/Gilou_454x303.jpg");
     position: relative;
-    margin: 5% 0;
+    margin: 4% 0;
     z-index: 5;
   }
   .home-img:hover {
@@ -292,7 +294,10 @@
   }
   .home-article {
     font-size: calc(0.8em + 1vmin);
-    max-width: 50%;
+    width: 60%;
+    max-width: 950px;
+    text-align: center;
+    padding: 0 3%;
     z-index: 1;
   }
   .home-text-author {
@@ -1389,6 +1394,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   width: 100%;
 }
 
@@ -1597,7 +1605,7 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  width: 99%;
+  width: 100%;
 }
 
 .contact-form-message {
@@ -1618,7 +1626,7 @@
 }
 
 .contact-form-message textarea {
-  width: 100%;
+  width: 99%;
   font-family: "Nunito", sans-serif;
   font-size: calc(0.6em + 1.3vh);
   color: #000 !important;
@@ -1721,7 +1729,6 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    height: 100%;
     overflow: hidden;
   }
   .contact-author {
@@ -1781,7 +1788,7 @@
             animation-delay: 1.4s;
   }
   .contact-form input {
-    width: 99%;
+    width: 100%;
     font-size: calc(0.5em + 1.3vh);
     padding: 1.5%;
   }
@@ -2037,6 +2044,8 @@ a:link {
 }
 
 html {
+  position: relative;
+  height: 100%;
   background-color: #000;
   min-height: -webkit-fill-available;
 }
@@ -2082,7 +2091,7 @@ html {
   left: 0;
   right: 0;
   width: auto;
-  height: 6%;
+  height: 6vh;
   padding: 0 3%;
   z-index: 100;
   overflow: hidden;
@@ -2182,7 +2191,16 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 94vh;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   min-height: -webkit-fill-available;
   padding: 6vh 2% 2%;
   font-family: "Nunito", sans-serif;
@@ -2224,10 +2242,18 @@ main {
   -webkit-box-align: stretch;
       -ms-flex-align: stretch;
           align-items: stretch;
-  position: relative;
-  height: 100%;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
+  height: 94%;
+  width: 100%;
+  max-height: 94vh;
+  margin: 6vh auto 0;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  overflow: hidden;
 }
 
 main h1 {
@@ -2312,11 +2338,6 @@ main h1.projects-title.portfolio {
   .toggleTheme:hover img {
     -webkit-transform: scale(0.8);
             transform: scale(0.8);
-  }
-  .main {
-    -webkit-box-flex: 0;
-        -ms-flex-positive: 0;
-            flex-grow: 0;
   }
   .main h1 {
     font-size: 5em;

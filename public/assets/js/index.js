@@ -1,7 +1,7 @@
 // MODULES
-import { handlerTheme } from "./handles/handlerTheme.js";
 import { handlerLang } from "./handles/handlerLang.js";
 import { handlerNav } from "./handles/handlerNav.js";
+import { handlerTheme } from "./handles/handlerTheme.js";
 import { home } from "./views/Home.js";
 
 // DOM
@@ -9,6 +9,7 @@ const main = document.getElementsByClassName("main");
 const linksNav = document.getElementsByClassName("nav-items");
 const themeButton = document.querySelector(".toggleTheme");
 const langButton = document.querySelector(".toggleLang");
+const title = document.querySelector(".home-title");
 
 // PARAMS
 export let locat = "home";
@@ -61,6 +62,18 @@ const handleTheme = (ev) => {
 
 // First rendering
 main[0].innerHTML = home(langFrench);
+
+// Adjust theme by theme computer user
+if (
+  window.matchMedia &&
+  window.matchMedia("(prefers-color-scheme:dark)").matches
+) {
+  app.classList.add("darkMode");
+} else {
+  app.classList.add("lightMode_home");
+  themeDark = false;
+  handlerTheme(themeDark, locat);
+}
 
 // LISTENERS
 for (const link of linksNav) {
