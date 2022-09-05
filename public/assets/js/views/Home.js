@@ -1,12 +1,12 @@
 // Text french
 const titleHomeFrench = "Développeur Web Javascript";
 const textHomeFrench =
-  "J’ai toujours été passionné par le monde de la tech, naturellement j’ai décidé d’orienté ma carrière en ce sens en opérant une reconversion professionnelle. Je me suis alors formé au développement web en autodidacte avec <span>Open</span><span>Class</span><span>Room</span> puis via O’CLOCK avec une formation intensive avec spécialisation React.";
+  "Passionné depuis toujours par l’informatique et les nouvelles technologies, j’ai naturellement décidé d’orienter ma carrière en ce sens en opérant une reconversion professionnelle dans le développement web.<br>Je me suis alors formé en autodidacte via <span>Open</span><span>Class</span><span>Room</span> puis via O’CLOCK avec une formation intensive de « Développeur Web FullStack Javascript » avec une spécialisation React.";
 
 // Text English
 const titleHomeEnglish = "Web Javascript Developer";
 const textHomeEnglish =
-  "I have always been passionate about the world of tech, naturally I decided to direct my career in this direction by operating a professional retraining. I then trained in self-taught web development with <span>Open</span><span>Class</span><span>Room</span> then via O’CLOCK with intensive training with React specialization.";
+  "Having always been passionate about IT and new technologies, I naturally decided to direct my career in this direction by operating a professional retraining in web development.<br>I trained as a self-taugh via <span>Open</span><span>Class</span><span>Room</span> then via O'CLOCK with an intensive training as a « FullStack Javascript Web Developer » with a specialization in React.";
 
 // Color title
 const titleHomeColored = "linear-gradient(225deg, #0093E9 0%, #80D0C7 100%)";
