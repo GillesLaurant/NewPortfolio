@@ -66,11 +66,9 @@ main[0].innerHTML = home(langFrench);
 // Adjust theme by theme computer user
 if (
   window.matchMedia &&
-  window.matchMedia("(prefers-color-scheme:dark)").matches
+  window.matchMedia("(prefers-color-scheme:light)").matches
 ) {
-  app.classList.add("darkMode");
-} else {
-  app.classList.add("lightMode_home");
+  app.classList.replace("darkMode", "lightMode_home");
   themeDark = false;
   handlerTheme(themeDark, locat);
 }

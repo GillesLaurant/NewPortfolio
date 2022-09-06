@@ -55,7 +55,7 @@
   max-width: 500px;
   text-align: justify;
   overflow-wrap: break-word;
-  font-size: calc(0.5em + 1.5vmax);
+  font-size: calc(0.5em + 1.3vmax);
   line-height: auto;
   font-weight: 300;
   padding: 2% 5%;
