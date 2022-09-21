@@ -9,12 +9,18 @@ const main = document.getElementsByClassName("main");
 const linksNav = document.getElementsByClassName("nav-items");
 const themeButton = document.querySelector(".toggleTheme");
 const langButton = document.querySelector(".toggleLang");
-const title = document.querySelector(".home-title");
 
 // PARAMS
 export let locat = "home";
 export let themeDark = true;
 export let langFrench = true;
+
+// SERVICE WORKER
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("serviceWorker.js");
+  });
+}
 
 // Handle nav Home || Projects || Contact
 const handleNav = (ev) => {

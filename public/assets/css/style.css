@@ -38,8 +38,9 @@
   -ms-flex-negative: 0;
       flex-shrink: 0;
   border-radius: 50%;
-  background-image: url("../images/Gilou_192x128.jpg");
-  background-position: center;
+  background-image: url("../images/Gilou_128x171.jpeg");
+  background-position-x: center;
+  background-position-y: 10%;
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-transition: all 0.5s ease-out;
@@ -49,6 +50,8 @@
           transform: rotateX(90deg);
   -webkit-animation: rotateAuthor 0.5s ease-out 0.5s forwards;
           animation: rotateAuthor 0.5s ease-out 0.5s forwards;
+  -webkit-filter: contrast(200%);
+          filter: contrast(200%);
 }
 
 .home-article {
@@ -283,14 +286,14 @@
   .home-img {
     width: 17vh;
     height: 17vh;
-    background-image: url("../images/Gilou_454x303.jpg");
+    background-image: url("../images/Gilou_500x667.jpeg");
     position: relative;
     margin: 4% 0;
     z-index: 5;
   }
   .home-img:hover {
-    -webkit-filter: hue-rotate(3.142rad);
-            filter: hue-rotate(3.142rad);
+    -webkit-filter: contrast(100%);
+            filter: contrast(100%);
   }
   .home-article {
     font-size: calc(0.8em + 1vmin);
@@ -2016,10 +2019,12 @@
           appearance: none;
   border: none;
   color: inherit;
+  scrollbar-width: none;
 }
 
 *::-webkit-scrollbar {
   display: none;
+  background: transparent;
 }
 
 svg {
@@ -2047,28 +2052,7 @@ html {
   position: relative;
   height: 100%;
   background-color: #000;
-  min-height: -webkit-fill-available;
-}
-
-@font-face {
-  font-family: "Anton";
-  src: local("Anton"), local("Anton-Regular"), local("Anton Regular"), url("/public/assets/fonts/Anton-Regular.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: local("Nunito"), local("Nunito-Regular"), local("Nunito Regular"), url("/public/assets/fonts/Nunito-VariableFont_wght.ttf") format("truetype");
-  font-weight: 200 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("/public/assets/fonts/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
-  font-weight: 200 600;
-  font-style: italic;
-  font-display: swap;
+  min-height: -webkit-stretch;
 }
 
 /***** HEADER APP *****/
@@ -2187,10 +2171,7 @@ html {
 /***** APP *****/
 #app {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2201,7 +2182,7 @@ html {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
-  min-height: -webkit-fill-available;
+  min-height: -webkit-stretch;
   padding: 6vh 2% 2%;
   font-family: "Nunito", sans-serif;
 }
@@ -2323,8 +2304,14 @@ main h1.projects-title.portfolio {
 }
 
 @media (min-width: 990px) {
+  html {
+    overflow: hidden;
+  }
   .header {
     height: 5vh;
+  }
+  #app {
+    overflow: hidden;
   }
   .toggleLang img,
   .toggleTheme img {

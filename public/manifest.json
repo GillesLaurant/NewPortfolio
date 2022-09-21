@@ -1,0 +1,51 @@
+{
+  "name": "GillesLaurant.fr",
+  "short_name": "GillesLaurant",
+  "description": "Gilles Laurant Developper Fullstack Javascript Portfolio",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "48x48"
+    },
+    {
+      "src": "assets/images/icons/gl_96.png",
+      "type": "image/png",
+      "sizes": "97x97"
+    },
+    {
+      "src": "assets/images/icons/gl_192.png",
+      "type": "image/png",
+      "sizes": "193x193"
+    },
+    {
+      "src": "assets/images/icons/gl_512.png",
+      "type": "image/png",
+      "sizes": "513x513"
+    },
+    {
+      "src": "assets/images/icons/gl_96.png",
+      "type": "image/png",
+      "sizes": "97x97",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/images/icons/gl_192.png",
+      "type": "image/png",
+      "sizes": "193x193",
+      "purpose": "maskable"
+    },
+    {
+      "src": "assets/images/icons/gl_512.png",
+      "type": "image/png",
+      "sizes": "513x513",
+      "purpose": "maskable"
+    }
+  ],
+  "id": "index.html",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary"
+}

@@ -22,8 +22,10 @@
 
 .home-title {
   background: linear-gradient(225deg, #0093e9 0%, #80d0c7 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .home-img {
@@ -33,8 +35,9 @@
   -ms-flex-negative: 0;
       flex-shrink: 0;
   border-radius: 50%;
-  background-image: url("../images/Gilou_192x128.jpg");
-  background-position: center;
+  background-image: url("../images/Gilou_128x171.jpeg");
+  background-position-x: center;
+  background-position-y: 10%;
   background-size: cover;
   background-repeat: no-repeat;
   -webkit-transition: all 0.5s ease-out;
@@ -44,6 +47,8 @@
           transform: rotateX(90deg);
   -webkit-animation: rotateAuthor 0.5s ease-out 0.5s forwards;
           animation: rotateAuthor 0.5s ease-out 0.5s forwards;
+  -webkit-filter: contrast(200%);
+          filter: contrast(200%);
 }
 
 .home-article {
@@ -278,14 +283,14 @@
   .home-img {
     width: 17vh;
     height: 17vh;
-    background-image: url("../images/Gilou_454x303.jpg");
+    background-image: url("../images/Gilou_500x667.jpeg");
     position: relative;
     margin: 4% 0;
     z-index: 5;
   }
   .home-img:hover {
-    -webkit-filter: hue-rotate(3.142rad);
-            filter: hue-rotate(3.142rad);
+    -webkit-filter: contrast(100%);
+            filter: contrast(100%);
   }
   .home-article {
     font-size: calc(0.8em + 1vmin);
