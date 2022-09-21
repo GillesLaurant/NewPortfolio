@@ -13,9 +13,11 @@
   appearance: none;
   border: none;
   color: inherit;
+  scrollbar-width: none;
 
   &::-webkit-scrollbar {
     display: none;
+    background: transparent;
   }
 }
 svg {
@@ -40,31 +42,7 @@ html {
   position: relative;
   height: 100%;
   background-color: #000;
-  min-height: -webkit-fill-available;
-}
-
-@font-face {
-  font-family: "Anton";
-  src: local("Anton"), local("Anton-Regular"), local("Anton Regular"),
-    url("/public/assets/fonts/Anton-Regular.ttf") format("truetype");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: local("Nunito"), local("Nunito-Regular"), local("Nunito Regular"),
-    url("/public/assets/fonts/Nunito-VariableFont_wght.ttf") format("truetype");
-  font-weight: 200 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("/public/assets/fonts/Nunito-Italic-VariableFont_wght.ttf")
-    format("truetype");
-  font-weight: 200 600;
-  font-style: italic;
-  font-display: swap;
+  min-height: -webkit-stretch;
 }
 
 /***** HEADER APP *****/
@@ -138,15 +116,12 @@ html {
 /***** APP *****/
 #app {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   height: 100vh;
   display: flex;
   align-items: stretch;
   flex-grow: 1;
-  min-height: -webkit-fill-available;
+  min-height: -webkit-stretch;
   padding: 6vh 2% 2%;
   font-family: "Nunito", sans-serif;
 }
@@ -249,8 +224,15 @@ main {
 }
 
 @include media(990px) {
+  html {
+    overflow: hidden;
+  }
   .header {
     height: 5vh;
+  }
+
+  #app {
+    overflow: hidden;
   }
 
   .toggleLang img,

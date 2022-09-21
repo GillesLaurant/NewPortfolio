@@ -58,7 +58,8 @@ const projects = (lang) => {
                 src=${project.mokups}
                 alt=${project.title}
                 class="projects-item-mokup"
-                loading="eager"
+                loading="lazy"
+                referrerpolicy="strict-origin"
               />
               <p class="projects-item-title" >${project.title}</p>
             </div>`
