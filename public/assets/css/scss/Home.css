@@ -22,8 +22,10 @@
 
 .home-title {
   background: linear-gradient(225deg, #0093e9 0%, #80d0c7 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .home-img {

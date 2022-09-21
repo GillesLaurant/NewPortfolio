@@ -1,6 +1,7 @@
 {
   "name": "GillesLaurant.fr",
   "short_name": "GillesLaurant",
+  "description": "Gilles Laurant Developper Fullstack Javascript Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -41,6 +42,7 @@
       "purpose": "maskable"
     }
   ],
+  "id": "index.html",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#000000",

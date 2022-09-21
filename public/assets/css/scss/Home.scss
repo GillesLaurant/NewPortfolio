@@ -8,8 +8,10 @@
 
   &-title {
     background: $light_back_home;
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    color: transparent;
   }
 
   // Author image circle
